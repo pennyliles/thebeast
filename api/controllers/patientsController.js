@@ -1,21 +1,29 @@
 const express = require('express')
 const patientsServices = require('../services/patientsServices')
 
-const getRecord = ((req, res) => {
+async function getRecord(req, res) {
+    const id = req.params.id
+    try {
+        const result = await getRecordFromDB(id)
+        res.sendStatus(201)
+        return result
+    } catch (e) {
+        console.log(e.message)
+        res.sendStatus(500)
+    }
+}
 
-})
+async function addRecord(req, res) {
 
-const addRecord = ((req, res) => {
+}
 
-})
+async function updateRecord(req, res) {
 
-const updateRecord = ((req, res) => {
+}
 
-})
+async function deleteRecord(req, res) {
 
-const deleteRecord = ((req, res) => {
-
-})
+}
 
 
 module.exports = {

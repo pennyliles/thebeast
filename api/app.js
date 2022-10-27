@@ -1,4 +1,9 @@
+import { connectToMongo } from "../api/database.js"
+
+const dotenv = require('dotenv')
+const cors = require('cors')
 const express = require('express')
+
 const app = express()
 
 /* Routers */
@@ -8,6 +13,8 @@ const port = 3000
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+connectToMongo("mongodb://localhost:27017")
 
 app.use('/', routes)
 

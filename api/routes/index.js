@@ -16,4 +16,4 @@ router.delete('/patients/:id', patientsController.deleteRecord)
 
 /* Admin Routes */
 
-module.exports = router;
+module.exports = router
