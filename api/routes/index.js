@@ -1,19 +1,17 @@
-const express = require('express')
-const patientsController = require("../controllers/patientsController")
+const express = require('express');
+const personLevelController = require("../controllers/personLevelController");
 
-const router = express.Router()
+const router = express.Router();
 
 /* Home Page */
 router.get('/', (req, res) => {
-    res.send('Hello World! From the router.')
+    res.send('Hello World! From the router.');
 })
 
-/* Patients Routes */
-router.get('/patients/:id', patientsController.getRecord)
-router.post('/patients/:id', patientsController.addRecord)
-router.put('/patients/:id', patientsController.updateRecord)
-router.delete('/patients/:id', patientsController.deleteRecord)
+/* Person Level Routes */
+router.get('/personLevel/:id', personLevelController.getRecord);
+router.post('/personLevel/:id', personLevelController.addRecord);
+router.put('/personLevel/:id', personLevelController.updateRecord);
+router.delete('/personLevel/:id', personLevelController.deleteRecord);
 
-/* Admin Routes */
-
-module.exports = router
+module.exports = router;

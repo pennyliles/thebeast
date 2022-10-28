@@ -1,29 +1,26 @@
-import { connectToMongo } from "../api/database.js"
+const mongodb = require('mongodb');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const express = require('express');
+const db = require('../api/database');
 
-const dotenv = require('dotenv')
-const cors = require('cors')
-const express = require('express')
+db.connectToMongo();
 
-const app = express()
+const app = express();
+app.use(cors());
+
+const port = 3000;
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 /* Routers */
-const routes = require("./routes")
+const routes = require("./routes");
 
-const port = 3000
-
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-
-connectToMongo("mongodb://localhost:27017")
-
-app.use('/', routes)
-
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
+app.use('/', routes);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${port}`);
 })
 
 module.exports = app;
