@@ -1,5 +1,5 @@
 const express = require('express');
-const personLevelController = require("../controllers/personLevelController");
+const personLevelController = require('../controllers/personLevelController')
 
 const router = express.Router();
 
@@ -9,6 +9,10 @@ router.get('/', (req, res) => {
 })
 
 /* Person Level Routes */
+// All records
+router.get('/personLevel', personLevelController.getRecord);
+
+// Specific record
 router.get('/personLevel/:id', personLevelController.getRecord);
 router.post('/personLevel/:id', personLevelController.addRecord);
 router.put('/personLevel/:id', personLevelController.updateRecord);
