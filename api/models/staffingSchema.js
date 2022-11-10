@@ -1,15 +1,16 @@
 const mongoose = require("mongoose");
 
+// Create a schema
 const staffingSchema = new mongoose.Schema({
     agency_name: String,
-    eval_dates: [Date],
-    date_completed: Date,
-    staff: String,
+    eval_dates: [String],
+    date_completed: String,
+    staff_name: String,
     job_titles: String,
     other_roles: String,
     time_spent: Number,
-    start_date: Date,
-    end_data: Date,
+    start_date: String,
+    end_data: Sting,
     hours_worked: Number,
     IPS_training: [String]
 });

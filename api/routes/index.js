@@ -1,21 +1,26 @@
 const express = require('express');
-const personLevelController = require('../controllers/personLevelController')
-
 const router = express.Router();
+
+/* Controllers */
+const personLevelController = require("../controllers/personLevelController")
 
 /* Home Page */
 router.get('/', (req, res) => {
-    res.send('Hello World! From the router.');
+    res.send('Hello World!');
 })
 
 /* Person Level Routes */
-// All records
-router.get('/personLevel', personLevelController.getRecord);
+router.get('/person_level', (req, res) => {
+    res.send('Person Level works')
+});
+// Get record
+router.get('/person_level/:id', personLevelController.getRecord);
+// Add record
+router.post('/person_level/:id', personLevelController.addRecord);
+// Update record
+router.patch('/person_level/:id', personLevelController.updateRecord);
+// Delete record
+router.delete('/person_level/:id', personLevelController.deleteRecord);
 
-// Specific record
-router.get('/personLevel/:id', personLevelController.getRecord);
-router.post('/personLevel/:id', personLevelController.addRecord);
-router.put('/personLevel/:id', personLevelController.updateRecord);
-router.delete('/personLevel/:id', personLevelController.deleteRecord);
 
 module.exports = router;

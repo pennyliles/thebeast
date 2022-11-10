@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const personLevelSchema = new mongoose.Schema({
-    uid: Number,
+    uid: String,
     phase_of_service: String,
-    first_date: Date,
+    first_date: String,
     ipe_with_vr: Boolean,
     vr_id: Number,
     county_id: Number,
