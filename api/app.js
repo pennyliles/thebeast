@@ -1,14 +1,26 @@
-const http = require('http');
+const mongodb = require('mongodb');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const express = require('express');
+const db = require('../api/database');
 
-const hostname = '127.0.0.1';
+db.connectToMongo();
+
+const app = express();
+app.use(cors());
+
 const port = 3000;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+/* Routers */
+const routes = require("./routes/index");
+
+app.use('/', routes);
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+})
+
+module.exports = app;
