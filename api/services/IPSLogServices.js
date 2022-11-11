@@ -17,14 +17,14 @@ async function getAllRecordsFromDB() {
 }
 
 async function getRecordFromDB(id) {
-    var record = await IPSLogModel.findOne({ uid: id }, function (err, doc) {
+    var record = await IPSLogModel.findOne({ staff_name: id }, function (err, doc) {
         if (err) {
             throw err;
         } else {
             if (doc) {
                 console.log('Found ' + doc);
             } else {
-                console.log('Could not find record with uid: ' + id);
+                console.log('Could not find record with staff_name: ' + id);
             }
         }
     }).clone();
@@ -56,7 +56,7 @@ async function addRecordToDB(body) {
 }
 
 async function updateRecordInDB(id, body) {
-    var status = await IPSLogModel.findOneAndUpdate({ uid: id }, body, function (err, doc) {
+    var status = await IPSLogModel.findOneAndUpdate({ staff_name: id }, body, function (err, doc) {
         if (err) {
             throw err;
         } else {
@@ -72,9 +72,9 @@ async function updateRecordInDB(id, body) {
 }
 
 async function deleteRecordFromDB(id) {
-    var status = await IPSLogModel.findOne({ uid: id });
+    var status = await IPSLogModel.findOne({ staff_name: id });
 
-    await IPSLogModel.findOneAndDelete({ uid: id }, function (err, doc) {
+    await IPSLogModel.findOneAndDelete({ staff_name: id }, function (err, doc) {
         if (err) {
             throw err;
         } else {

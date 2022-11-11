@@ -17,7 +17,7 @@ async function getAllRecordsFromDB() {
 }
 
 async function getRecordFromDB(id) {
-    var record = await staffingModel.findOne({ uid: id }, function (err, doc) {
+    var record = await staffingModel.findOne({ staff_name: id }, function (err, doc) {
         if (err) {
             throw err;
         } else {
@@ -56,7 +56,7 @@ async function addRecordToDB(body) {
 }
 
 async function updateRecordInDB(id, body) {
-    var status = await staffingModel.findOneAndUpdate({ uid: id }, body, function (err, doc) {
+    var status = await staffingModel.findOneAndUpdate({ staff_name: id }, body, function (err, doc) {
         if (err) {
             throw err;
         } else {
@@ -72,9 +72,9 @@ async function updateRecordInDB(id, body) {
 }
 
 async function deleteRecordFromDB(id) {
-    var status = await staffingModel.findOne({ uid: id });
+    var status = await staffingModel.findOne({ staff_name: id });
 
-    await staffingModel.findOneAndDelete({ uid: id }, function (err, doc) {
+    await staffingModel.findOneAndDelete({ staff_name: id }, function (err, doc) {
         if (err) {
             throw err;
         } else {
