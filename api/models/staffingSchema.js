@@ -10,7 +10,7 @@ const staffingSchema = new mongoose.Schema({
     other_roles: String,
     time_spent: Number,
     start_date: String,
-    end_data: Sting,
+    end_date: String,
     hours_worked: Number,
     IPS_training: [String]
 });

@@ -1,7 +1,7 @@
-const personLevelModel = require('../models/personLevelSchema');
+const staffingModel = require('../models/staffingSchema');
 
 async function getAllRecordsFromDB() {
-    var records = await personLevelModel.find(function (err, docs) {
+    var records = await staffingModel.find(function (err, docs) {
         if (err) {
             throw err;
         } else {
@@ -17,7 +17,7 @@ async function getAllRecordsFromDB() {
 }
 
 async function getRecordFromDB(id) {
-    var record = await personLevelModel.findOne({ uid: id }, function (err, doc) {
+    var record = await staffingModel.findOne({ uid: id }, function (err, doc) {
         if (err) {
             throw err;
         } else {
@@ -33,8 +33,8 @@ async function getRecordFromDB(id) {
 }
 
 async function addRecordToDB(body) {
-    var record = new personLevelModel(body);
-    var status = await personLevelModel.findOne(body, function (err, doc) {
+    var record = new staffingModel(body);
+    var status = await staffingModel.findOne(body, function (err, doc) {
         if (err) {
             throw err;
         } else {
@@ -56,7 +56,7 @@ async function addRecordToDB(body) {
 }
 
 async function updateRecordInDB(id, body) {
-    var status = await personLevelModel.findOneAndUpdate({ uid: id }, body, function (err, doc) {
+    var status = await staffingModel.findOneAndUpdate({ uid: id }, body, function (err, doc) {
         if (err) {
             throw err;
         } else {
@@ -72,9 +72,9 @@ async function updateRecordInDB(id, body) {
 }
 
 async function deleteRecordFromDB(id) {
-    var status = await personLevelModel.findOne({ uid: id });
+    var status = await staffingModel.findOne({ uid: id });
 
-    await personLevelModel.findOneAndDelete({ uid: id }, function (err, doc) {
+    await staffingModel.findOneAndDelete({ uid: id }, function (err, doc) {
         if (err) {
             throw err;
         } else {

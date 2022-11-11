@@ -1,7 +1,7 @@
-const personLevelModel = require('../models/personLevelSchema');
+const closedModel = require('../models/closedSchema');
 
 async function getAllRecordsFromDB() {
-    var records = await personLevelModel.find(function (err, docs) {
+    var records = await closedModel.find(function (err, docs) {
         if (err) {
             throw err;
         } else {
@@ -17,7 +17,7 @@ async function getAllRecordsFromDB() {
 }
 
 async function getRecordFromDB(id) {
-    var record = await personLevelModel.findOne({ uid: id }, function (err, doc) {
+    var record = await closedModel.findOne({ uid: id }, function (err, doc) {
         if (err) {
             throw err;
         } else {
@@ -33,8 +33,8 @@ async function getRecordFromDB(id) {
 }
 
 async function addRecordToDB(body) {
-    var record = new personLevelModel(body);
-    var status = await personLevelModel.findOne(body, function (err, doc) {
+    var record = new closedModel(body);
+    var status = await closedModel.findOne(body, function (err, doc) {
         if (err) {
             throw err;
         } else {
@@ -56,7 +56,7 @@ async function addRecordToDB(body) {
 }
 
 async function updateRecordInDB(id, body) {
-    var status = await personLevelModel.findOneAndUpdate({ uid: id }, body, function (err, doc) {
+    var status = await closedModel.findOneAndUpdate({ uid: id }, body, function (err, doc) {
         if (err) {
             throw err;
         } else {
@@ -72,9 +72,9 @@ async function updateRecordInDB(id, body) {
 }
 
 async function deleteRecordFromDB(id) {
-    var status = await personLevelModel.findOne({ uid: id });
+    var status = await closedModel.findOne({ uid: id });
 
-    await personLevelModel.findOneAndDelete({ uid: id }, function (err, doc) {
+    await closedModel.findOneAndDelete({ uid: id }, function (err, doc) {
         if (err) {
             throw err;
         } else {
