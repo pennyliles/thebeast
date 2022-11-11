@@ -56,7 +56,9 @@ async function updateRecordInDB(id, body) {
 }
 
 async function deleteRecordFromDB(id) {
-    var status = await personLevelModel.findOneAndDelete({ uid: id }, function (err, doc) {
+    var status = await personLevelModel.findOne({ uid: id });
+
+    await personLevelModel.findOneAndDelete({ uid: id }, function (err, doc) {
         if (err) {
             throw err;
         } else {

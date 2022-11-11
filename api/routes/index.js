@@ -16,7 +16,7 @@ router.get('/person_level', (req, res) => {
 // Get record
 router.get('/person_level/:id', personLevelController.getRecord);
 // Add record
-router.post('/person_level/:id', personLevelController.addRecord);
+router.post('/person_level', personLevelController.addRecord);
 // Update record
 router.patch('/person_level/:id', personLevelController.updateRecord);
 // Delete record

@@ -52,9 +52,9 @@ async function deleteRecord(req, res) {
     try {
         var status = await personLevelServices.deleteRecordFromDB(id);
         if (status) {
-            res.status(200).json({ sucess: true, msg: 'Record deleted.' });
+            res.status(200).json({ success: true, msg: 'Record deleted.' });
         } else {
-            res.status(200).json({ sucess: true, msg: 'Record not found.' });
+            res.status(200).json({ success: true, msg: 'Record not found.' });
         }
     } catch (e) {
         console.log(e.message);
