@@ -29,9 +29,9 @@ export class IpslogListComponent implements OnInit {
       });
   }
 
-  refreshList(): void {
-    this.retrieveLogs();
-  }
+  // refreshList(): void {
+  //   this.retrieveLogs();
+  // }
 
   // searchName(): void {
   //   this.currentLog = {};

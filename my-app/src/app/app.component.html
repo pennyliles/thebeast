@@ -1,1 +1,38 @@
-<router-outlet></router-outlet>
+<style>      
+    body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, serif;
+  }
+  .top-box h1{
+    margin:0;
+  }
+</style>
+<body style="background-color:rgb(193, 235, 221);">
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/"><strong>Home</strong></a>
+        <span style="width:50px;display:inline-block"></span>
+        <a class="nav-item nav-link" routerLink="/personLevel"><strong>Person Level Survey</strong></a>
+        <span style="width:50px;display:inline-block"></span>
+        <a class="nav-item nav-link" routerLink="/closed"><strong>Closed Survey</strong></a>
+        <span style="width:50px;display:inline-block"></span>
+        <a class="nav-item nav-link" routerLink="/staffinglevel"><strong>Staff Level Data Survey</strong></a>
+        <span style="width:50px;display:inline-block"></span>
+        <a class="nav-item nav-link" routerLink="/ipslog"><strong>IPS Log</strong></a>
+        <span style="width:50px;display:inline-block"></span>
+        <a class="nav-item nav-link" routerLink="/jobdevelopmentlog"><strong>Job Development Log</strong></a>
+        <span style="width:50px;display:inline-block"></span>
+    </div>
+</nav>
+</body>
+
+
+<!-- main content container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
