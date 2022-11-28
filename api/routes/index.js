@@ -23,6 +23,7 @@ router.post('/person_level', personLevelController.addRecord);
 router.patch('/person_level/:id', personLevelController.updateRecord);
 // Delete record
 router.delete('/person_level/:id', personLevelController.deleteRecord);
+router.delete('/person_level', personLevelController.deleteAllRecords);
 
 /* Closed Routes */
 router.get('/closed', closedController.getAllRecords);
@@ -30,6 +31,7 @@ router.get('/closed/:id', closedController.getRecord);
 router.post('/closed', closedController.addRecord);
 router.patch('/closed/:id', closedController.updateRecord);
 router.delete('/closed/:id', closedController.deleteRecord);
+router.delete('/closed', closedController.deleteAllRecords);
 
 /* Staffing Routes */
 router.get('/staffing', staffingController.getAllRecords);
@@ -37,6 +39,7 @@ router.get('/staffing/:id', staffingController.getRecord);
 router.post('/staffing', staffingController.addRecord);
 router.patch('/staffing/:id', staffingController.updateRecord);
 router.delete('/staffing/:id', staffingController.deleteRecord);
+router.delete('/staffing', staffingController.deleteAllRecords);
 
 /* JobDev Routes */
 router.get('/jobdev', jobDevController.getAllRecords);
@@ -44,6 +47,7 @@ router.get('/jobdev/:id', jobDevController.getRecord);
 router.post('/jobdev', jobDevController.addRecord);
 router.patch('/jobdev/:id', jobDevController.updateRecord);
 router.delete('/jobdev/:id', jobDevController.deleteRecord);
+router.delete('/jobdev', jobDevController.deleteAllRecords);
 
 /* IPSLog Routes */
 router.get('/ipslog', IPSLogController.getAllRecords);
@@ -51,6 +55,7 @@ router.get('/ipslog/:id', IPSLogController.getRecord);
 router.post('/ipslog', IPSLogController.addRecord);
 router.patch('/ipslog/:id', IPSLogController.updateRecord);
 router.delete('/ipslog/:id', IPSLogController.deleteRecord);
+router.delete('/ipslog', IPSLogController.deleteAllRecords);
 
 
 module.exports = router;

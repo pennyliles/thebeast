@@ -1,0 +1,53 @@
+<div class="list row">
+  <div class="center">
+  <h4>Closed Logs</h4>
+  <a routerLink="/addClosed"><button mat-raised-button color="primary">Add Log</button></a>
+    <!-- <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="name"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchName()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>  -->
+  
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">UID</th>
+                <th scope="col">ESP</th>
+                <th scope="col">Closure Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Engagement Activities</th>
+                <th scope="col">Closure Reason</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Closed of Closeds">
+                <td>{{ Closed.uid }}</td>
+                <td>{{ Closed.ESP }}</td>
+                <td>{{ Closed.closure_date }}</td>
+                <td>{{ Closed.employment_status }}</td>
+                <td>{{ Closed.engagement_activities }}</td>
+                <td>{{ Closed.closure_reason }}</td>
+                <button mat-raised-button color="warn" (click)="deleteOne(this.Closed.uid)">Delete Record</button>
+            </tr>         
+        </tbody>
+    </table>
+    
+    <button mat-raised-button color="warn" (click)="deleteAll()">Delete All Records</button>
+
+    </div>
+
+</div>

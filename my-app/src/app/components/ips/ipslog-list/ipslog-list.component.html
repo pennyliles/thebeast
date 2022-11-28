@@ -1,5 +1,8 @@
 <div class="list row">
-  <!-- <div class="col-md-8">
+  <div class="center">
+  <h4>IPS Logs</h4>
+  <a routerLink="/addIPS"><button mat-raised-button color="primary">Add Log</button></a>
+    <!-- <div class="col-md-8">
     <div class="input-group mb-3">
       <input
         type="text"
@@ -18,27 +21,7 @@
       </div>
     </div>
   </div>  -->
-
-  <!-- <div class="col-md-6">
-    <h4>IPS Logs</h4>
-    <ul class="list-group">
-      <li
-        class="list-group-item"
-        *ngFor="let IPSLog of IPSLogs; let i = index"
-        [class.active]="i == currentIndex"
-        (click)="setActiveTutorial(IPSLog, i)"
-      >
-        {{ IPSLog.staff_name }}
-      </li>
-    </ul> -->
-
-    <!-- <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
-      Remove All
-    </button> -->
-  <!-- </div> -->
-  <div class="center">
-  <h4>IPS Logs</h4>
-  <a routerLink="/addIPS"><button mat-raised-button color="primary">Add Log</button></a>
+  
     <table>
         <thead>
             <tr>
@@ -60,9 +43,13 @@
                 <td>{{ IPSLog.team_hours_spent }}</td>
                 <td>{{ IPSLog.community_hours_spent }}</td>
                 <td>{{ IPSLog.train_PTO_hours_spent }}</td>
+                <button mat-raised-button color="warn" (click)="deleteOne(this.IPSLog.staff_name)">Delete Record</button>
             </tr>         
         </tbody>
     </table>
+    
+    <button mat-raised-button color="warn" (click)="deleteAll()">Delete All Records</button>
+
     </div>
 
 </div>

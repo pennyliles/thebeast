@@ -29,9 +29,31 @@ export class IpslogListComponent implements OnInit {
       });
   }
 
-  // refreshList(): void {
-  //   this.retrieveLogs();
-  // }
+  deleteAll(): void {
+    this.IpsLogService.deleteAll()
+      .subscribe({
+        next: (res) => {
+          this.refreshList()
+          console.log(res)
+        },
+        error: (e) => console.error(e)
+      })
+  }
+
+  deleteOne(id: any): void {
+    this.IpsLogService.delete(id)
+      .subscribe({
+        next: (res) => {
+          this.refreshList()
+          console.log(res)
+        },
+        error: (e) => console.error(e)
+      })
+  }
+
+  refreshList(): void {
+    this.retrieveLogs();
+  }
 
   // searchName(): void {
   //   this.currentLog = {};

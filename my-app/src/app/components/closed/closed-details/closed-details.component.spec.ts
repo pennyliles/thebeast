@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IpslogListComponent } from './ipslog-list.component';
+import { ClosedDetailsComponent } from './closed-details.component';
 
-describe('IpslogListComponent', () => {
-  let component: IpslogListComponent;
-  let fixture: ComponentFixture<IpslogListComponent>;
+describe('ClosedDetailsComponent', () => {
+  let component: ClosedDetailsComponent;
+  let fixture: ComponentFixture<ClosedDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IpslogListComponent ]
+      declarations: [ ClosedDetailsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(IpslogListComponent);
+    fixture = TestBed.createComponent(ClosedDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

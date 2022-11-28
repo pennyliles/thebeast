@@ -76,11 +76,26 @@ async function deleteRecord(req, res) {
     }
 }
 
+async function deleteAllRecords(req, res) {
+    try {
+        var result = await closedServices.deleteAllRecordsFromDB();
+        if (result) {
+            res.status(200).jsonp(result);
+        } else {
+            res.status(200).json({ success: true, msg: 'No records found.' })
+        }
+    } catch (e) {
+        console.log(e.message);
+        res.status(500).json({ success: false, msg: 'Failed to delete records.' });
+    }
+}
+
 
 module.exports = {
     getAllRecords,
     getRecord,
     addRecord,
     updateRecord,
-    deleteRecord
+    deleteRecord,
+    deleteAllRecords
 };

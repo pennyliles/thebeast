@@ -89,10 +89,27 @@ async function deleteRecordFromDB(id) {
     return status;
 }
 
+async function deleteAllRecordsFromDB() {
+    var records = await staffingModel.deleteMany({}, function (err, docs) {
+        if (err) {
+            throw err;
+        } else {
+            if (docs) {
+                console.log('Deleted all records.');
+            } else {
+                console.log('No records found.')
+            }
+        }
+    }).clone();
+
+    return records;
+}
+
 module.exports = {
     getAllRecordsFromDB,
     getRecordFromDB,
     addRecordToDB,
     updateRecordInDB,
-    deleteRecordFromDB
+    deleteRecordFromDB,
+    deleteAllRecordsFromDB
 };

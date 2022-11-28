@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // Create a schema
 const closedSchema = new mongoose.Schema({
-    uid: Number,
+    uid: String,
     ESP: String,
     closure_date: String,
     employment_status: String,
