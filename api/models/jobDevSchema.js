@@ -6,7 +6,7 @@ const jobDevSchema = new mongoose.Schema({
     uid: Number,
     employment_goal: String,
     employer_contacted: String,
-    employer_hiring: Boolean,
+    employer_hiring: String,
     contact_method: String,
     date_of_contact: String,
     nature_of_visit: String,
