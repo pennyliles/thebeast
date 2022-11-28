@@ -1,22 +1,18 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-
-
-import { TestBed } from '@angular/core/testing';
-
-import { TeaminfoComponent } from './teaminfo.component';
-
+import { PersonleveldataComponent } from './personleveldata.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        TeaminfoComponent
+        PersonleveldataComponent
       ],
     }).compileComponents();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(TeaminfoComponent);
+    const fixture = TestBed.createComponent( PersonleveldataComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
@@ -28,7 +24,7 @@ describe('AppComponent', () => {
  // });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(TeaminfoComponent);
+    const fixture = TestBed.createComponent( PersonleveldataComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('get-started-angular app is running!');

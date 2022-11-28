@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { Model, StylesManager } from "survey-core";
+
+
 // const SURVEY_ID = 1;
 StylesManager.applyTheme("defaultV2");
 const surveyJson = {
-  "title": "Program Information",
-  "description": "Tell us about your team!",
+  "title": "Staffing level data",
+  "description": "Please fill out the staffing level data below",
   "logoPosition": "right",
   "pages": [
    {
@@ -15,93 +17,68 @@ const surveyJson = {
      {
       "type": "text",
       "name": "question1",
-      "title": "What is your team name?"
-     },
-     {
-      "type": "text",
-      "name": "question3",
-      "title": "Where is your team?"
+      "title": "What is the name of the agency?"
      },
      {
       "type": "text",
       "name": "question2",
-      "title": "What is your phone number"
+      "title": "What is the fidelity evaluation date "
+     },
+     {
+      "type": "text",
+      "name": "question3",
+      "title": "What was the date completed"
      },
      {
       "type": "text",
       "name": "question4",
-      "title": "What is your user email?"
+      "title": "What is the name of the staff who have worked on the IPS team over the last 6 months:"
      },
      {
       "type": "text",
       "name": "question5",
-      "title": "What is your team start up date?"
+      "title": "What are the Job Titles of the staff"
      },
      {
       "type": "text",
       "name": "question6",
-      "title": "What is your catchment area?"
+      "title": "If the person has another role on the team, list it here and % of time spent in each role."
      },
      {
       "type": "text",
       "name": "question7",
-      "title": "What is the name of your team lead?"
+      "title": "Date started working on the IPS team"
      },
      {
       "type": "text",
       "name": "question8",
-      "title": "What is the phone number of your team lead?"
+      "title": "Date employment ended (if applicable)"
      },
      {
       "type": "text",
       "name": "question9",
-      "title": "What is your team lead email?"
+      "title": "How many hours worked each week on the IPS Team?"
      },
      {
       "type": "text",
       "name": "question10",
-      "title": "What is the name of your agency leadership contact?"
-     },
-     {
-      "type": "text",
-      "name": "question11",
-      "title": "What is the phone number of your agency contact"
-     },
-     {
-      "type": "text",
-      "name": "question12",
-      "title": "What is the email of your agency contact"
-     },
-     {
-      "type": "text",
-      "name": "question13",
-      "title": "What is your funding source"
-     },
-     {
-      "type": "checkbox",
-      "name": "question14",
-      "choices": [
-       "item1",
-       "item2",
-       "item3"
-      ]
+      "title": "What IPS trainings have they attended?"
      }
     ],
-    "title": "Please tell us about your team",
-    "description": "Team information "
+    "title": "Please tell us about your staff ",
+    "description": "Staff level data"
    }
   ]
- };
+ }
 
  @Component({
-  selector: 'app-teaminfo',
-  templateUrl: './teaminfo.component.html',
-  styleUrls: ['./teaminfo.component.css']
+  selector: 'app-staffingleveldata',
+  templateUrl: './staffingleveldata.component.html',
+  styleUrls: ['./staffingleveldata.component.css']
 })
 
-
-export class TeaminfoComponent implements OnInit {
-  title = 'teaminfo survey';
+export class StaffingleveldataComponent implements OnInit {
+  title = 'My First Survey';
   surveyModel!: Model;
   alertResults (sender: { data: any; }) {
     const results = JSON.stringify(sender.data);
@@ -130,4 +107,3 @@ export class TeaminfoComponent implements OnInit {
 //   });
 //   request.send(JSON.stringify(json));
 // }
-

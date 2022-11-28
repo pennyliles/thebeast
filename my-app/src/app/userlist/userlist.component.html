@@ -1,0 +1,30 @@
+
+
+
+  <smart-table #table id="table" style="width: 850px;">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Staff Name</th>
+                <th scope="col">Time Period</th>
+                <th scope="col">Work Week</th>
+                <th scope="col">Hours Worked</th>
+                <th scope="col">Team Hours Spent</th>
+                <th scope="col">Community Hours Spent</th>
+                <th scope="col">Train PTO Hours Spent</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of tableData">
+                <td>{{ row.staff_name }}</td>
+                <td>{{ row.time_period }}</td>
+                <td>{{ row.work_week }}</td>
+                <td>{{ row.hours_worked }}</td>
+                <td>{{ row.team_hours_spent }}</td>
+                <td>{{ row.community_hours_spent }}</td>
+                <td>{{ row.train_PTO_hours_spent }}</td>
+            </tr>         
+        </tbody>
+    </table>
+</smart-table>

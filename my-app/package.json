@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "rxjs": "~7.5.0",
+    "smart-webcomponents-angular": "^14.4.0",
     "survey-angular-ui": "^1.9.57",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

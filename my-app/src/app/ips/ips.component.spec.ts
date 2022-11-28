@@ -1,17 +1,19 @@
-import { TestBed } from '@angular/core/testing';
-import { ClientsurveyComponent } from './clientsurvey.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { IpsComponent } from './ips.component';
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        ClientsurveyComponent
+        IpsComponent
       ],
     }).compileComponents();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(ClientsurveyComponent);
+    const fixture = TestBed.createComponent(IpsComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
@@ -23,7 +25,7 @@ describe('AppComponent', () => {
  // });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(ClientsurveyComponent);
+    const fixture = TestBed.createComponent(IpsComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('get-started-angular app is running!');
