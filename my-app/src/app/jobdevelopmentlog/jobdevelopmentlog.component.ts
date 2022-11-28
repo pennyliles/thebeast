@@ -14,42 +14,42 @@ const surveyJson = {
     "elements": [
      {
       "type": "text",
-      "name": "question1",
+      "name": "uid",
       "title": "What is the ID # of the client"
      },
      {
       "type": "text",
-      "name": "question2",
+      "name": "employment_goal",
       "title": "What are the Individual's Employment Goal?"
      },
      {
       "type": "text",
-      "name": "question3",
+      "name": "employer_contacted",
       "title": "Employer Contacted"
      },
      {
       "type": "text",
-      "name": "question4",
+      "name": "employer_hiring",
       "title": "Does the Employer Contact has hiring authority? Y/N"
      },
      {
       "type": "text",
-      "name": "question5",
+      "name": "contact_method",
       "title": "How Contacted? (i.e., in person, via telephone, email, individual served made contact, etc.)"
      },
      {
       "type": "text",
-      "name": "question6",
+      "name": "date_of_contact",
       "title": "Date of Contact"
      },
      {
       "type": "text",
-      "name": "question7",
+      "name": "nature_of_visit",
       "title": "Nature of Visit: First Meeting/ Second Meeting/ Ongoing"
      },
      {
       "type": "text",
-      "name": "question8",
+      "name": "visit_desc",
       "title": "description of the visit"
      }
     ],

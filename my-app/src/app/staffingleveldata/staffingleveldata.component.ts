@@ -7,8 +7,7 @@ import { Model, StylesManager } from "survey-core";
 // const SURVEY_ID = 1;
 StylesManager.applyTheme("defaultV2");
 const surveyJson = {
-  "title": "Staffing level data",
-  "description": "Please fill out the staffing level data below",
+  "title": "Please enter the staff data below",
   "logoPosition": "right",
   "pages": [
    {
@@ -16,57 +15,56 @@ const surveyJson = {
     "elements": [
      {
       "type": "text",
-      "name": "question1",
+      "name": "agency_name",
       "title": "What is the name of the agency?"
      },
      {
       "type": "text",
-      "name": "question2",
-      "title": "What is the fidelity evaluation date "
+      "name": "eval_dates",
+      "title": "When was the Fidelity Evaluation dates?"
      },
      {
       "type": "text",
-      "name": "question3",
+      "name": "date_completed",
       "title": "What was the date completed"
      },
      {
       "type": "text",
-      "name": "question4",
-      "title": "What is the name of the staff who have worked on the IPS team over the last 6 months:"
+      "name": "staff_name",
+      "title": "What was the name of the staff who have worked on the IPS team over the last 6 months?"
      },
      {
       "type": "text",
-      "name": "question5",
-      "title": "What are the Job Titles of the staff"
+      "name": "job_titles",
+      "title": "What were their job titles"
      },
      {
       "type": "text",
-      "name": "question6",
+      "name": "other_roles",
       "title": "If the person has another role on the team, list it here and % of time spent in each role."
      },
      {
       "type": "text",
-      "name": "question7",
-      "title": "Date started working on the IPS team"
+      "name": "start_data",
+      "title": "What was the date they started working on the IPS team"
      },
      {
       "type": "text",
-      "name": "question8",
+      "name": "end_data",
       "title": "Date employment ended (if applicable)"
      },
      {
       "type": "text",
-      "name": "question9",
+      "name": "hours_worked",
       "title": "How many hours worked each week on the IPS Team?"
      },
      {
       "type": "text",
-      "name": "question10",
+      "name": "IPS_training",
       "title": "What IPS trainings have they attended?"
      }
     ],
-    "title": "Please tell us about your staff ",
-    "description": "Staff level data"
+    "title": "Below are question about the staff and their work "
    }
   ]
  }

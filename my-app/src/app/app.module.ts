@@ -11,7 +11,11 @@ import { StaffingleveldataComponent } from './staffingleveldata/staffingleveldat
 import { JobdevelopmentlogComponent } from './jobdevelopmentlog/jobdevelopmentlog.component';
 import { IpsComponent } from './ips/ips.component';
 import { ClosedComponent } from './closed/closed.component';
-import { UserlistComponent } from './userlist/userlist.component';
+import { IPSPageComponent } from './IPSPage/IPSPage.component';
+import { ClosedPageComponent } from './closed-page/closed-page.component';
+import { JobPageComponent } from './job-page/job-page.component';
+import { PersonPageComponent } from './person-page/person-page.component';
+import { StaffPageComponent } from './staff-page/staff-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { UserlistComponent } from './userlist/userlist.component';
     JobdevelopmentlogComponent,
     IpsComponent,
     ClosedComponent,
-    UserlistComponent
+    IPSPageComponent,
+    ClosedPageComponent,
+    JobPageComponent,
+    PersonPageComponent,
+    StaffPageComponent
   ],
   imports: [
     BrowserModule,

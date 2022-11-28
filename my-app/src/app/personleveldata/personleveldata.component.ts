@@ -57,6 +57,93 @@ const surveyJson = {
       "type": "text",
       "name": "question9",
       "title": "What is the Clinical Services--Agency(s)"
+     },
+     {
+      "type": "dropdown",
+      "name": "question10",
+      "title": "Does this person receive benefits (e.g., SSI, SSDI, Housing Subsidy, Food Stamps, etc.)?",
+      "choices": [
+       {
+        "value": "item1",
+        "text": "SSI"
+       },
+       {
+        "value": "item2",
+        "text": "SSDI"
+       },
+       {
+        "value": "item3",
+        "text": "Housing Subsidy"
+       },
+       {
+        "value": "item4",
+        "text": "Food Stamps"
+       },
+       {
+        "value": "item5",
+        "text": "Other"
+       }
+      ]
+     },
+     {
+      "type": "text",
+      "name": "question11",
+      "title": "First Face to Face Employer Contact--made by ESP or person receiving IPS services(date)"
+     },
+     {
+      "type": "text",
+      "name": "question12",
+      "title": "Start Date of Most Recent Job (date)"
+     },
+     {
+      "type": "text",
+      "name": "question13",
+      "title": "Date of ESP F-F contact one week PRIOR to job start?"
+     },
+     {
+      "type": "text",
+      "name": "question14",
+      "title": "Date of ESP F-F contact within 3 days of job start?"
+     },
+     {
+      "type": "text",
+      "name": "question15",
+      "title": "How many times did the ESP see the person F-F for the 1st month on the job?"
+     },
+     {
+      "type": "text",
+      "name": "question16",
+      "title": "What was the name of this Employer "
+     },
+     {
+      "type": "text",
+      "name": "question17",
+      "title": "Can you provide a Brief Description of Job Duties"
+     },
+     {
+      "type": "text",
+      "name": "question18",
+      "title": "What was the Average Hourly Pay"
+     },
+     {
+      "type": "text",
+      "name": "question19",
+      "title": "What was the End Date of Most Recent Job loss in IPS"
+     },
+     {
+      "type": "text",
+      "name": "question20",
+      "title": "What school did they go to? "
+     },
+     {
+      "type": "text",
+      "name": "question21",
+      "title": "What degree did they earn at that school"
+     },
+     {
+      "type": "text",
+      "name": "question22",
+      "title": "Were they a full time or part time student"
      }
     ],
     "title": "Please tell us about the person level data ",

@@ -1,0 +1,28 @@
+
+
+
+  <smart-table #table id="table" style="width: 850px;">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">ID Number</th>
+                <th scope="col">ESP Name</th>
+                <th scope="col">Closure Date</th>
+                <th scope="col">Employment Status</th>
+                <th scope="col">Type of Assertive Engagement Activities Utilized</th>
+                <th scope="col">Reason for Closure</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of tableData">
+                <td>{{ row.uid }}</td>
+                <td>{{ row.ESP }}</td>
+                <td>{{ row.closure_data }}</td>
+                <td>{{ row.employment_status }}</td>
+                <td>{{ row.engagement_activities }}</td>
+                <td>{{ row.community_closure_reason }}</td>
+            </tr>         
+        </tbody>
+    </table>
+</smart-table>

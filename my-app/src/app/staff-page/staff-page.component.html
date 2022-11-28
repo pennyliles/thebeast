@@ -1,0 +1,39 @@
+
+
+
+  <smart-table #table id="table" style="width: 850px;">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Agency Name</th>
+                <th scope="col">Eval Dates</th>
+                <th scope="col">Dates Completed</th>
+                <th scope="col">Staff Name</th>
+                <th scope="col">Job Titles </th>
+                
+                <th scope="col">Other Roles</th>
+                <th scope="col">Time Spent</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Data</th>
+                <th scope="col">Hours Worked</th>
+                <th scope="col">IPS Trainings</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of tableData">
+                <td>{{ row.agency_name }}</td>
+                <td>{{ row.eval_dates }}</td>
+                <td>{{ row.date_completed }}</td>
+                <td>{{ row.staff_name }}</td>
+                <td>{{ row.job_titles}}</td>
+                <td>{{ row.other_roles}}</td>
+                <td>{{ row.time_spent }}</td>
+                <td>{{ row.start_date }}</td>
+                <td>{{ row.end_data }}</td>
+                <td>{{ row.hours_worked }}</td>
+                <td>{{ row.IPS_training }}</td>
+            </tr>         
+        </tbody>
+    </table>
+</smart-table>

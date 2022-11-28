@@ -1,0 +1,35 @@
+
+
+
+  <smart-table #table id="table" style="width: 850px;">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Date participated</th>
+                <th scope="col">UID</th>
+                <th scope="col">employment goal</th>
+                <th scope="col">employee contacted</th>
+                <th scope="col">Employer hiring </th>
+                
+                <th scope="col">Contact Method</th>
+                <th scope="col">Date of Contact</th>
+                <th scope="col">Nature of Visit</th>
+                <th scope="col">Visit description</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of tableData">
+                <td>{{ row.date_participated }}</td>
+                <td>{{ row.uid }}</td>
+                <td>{{ row.employment_goal }}</td>
+                <td>{{ row.employer_contacted }}</td>
+                <td>{{ row.employer_hiring}}</td>
+                <td>{{ row.contact_method }}</td>
+                <td>{{ row.date_of_contact }}</td>
+                <td>{{ row.nature_of_visit }}</td>
+                <td>{{ row.visit_desc }}</td>
+            </tr>         
+        </tbody>
+    </table>
+</smart-table>

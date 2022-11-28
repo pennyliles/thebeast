@@ -14,32 +14,37 @@ const surveyJson = {
     "elements": [
      {
       "type": "text",
-      "name": "question1",
-      "title": "IPS staff name"
+      "name": "staff_name",
+      "title": "What is the name of the IPS staff"
      },
      {
       "type": "text",
-      "name": "question2",
-      "title": "Work Week"
+      "name": "time_period",
+      "title": "What was the time period"
      },
      {
       "type": "text",
-      "name": "question3",
+      "name": "work_week",
+      "title": "What is the dates of the work week"
+     },
+     {
+      "type": "text",
+      "name": "hours_worked",
       "title": "Hours worked in week on the IPS Team"
      },
      {
       "type": "text",
-      "name": "question4",
-      "title": "# Hours spent in treatment team meetings and vocational unit meetings, writing notes/ documentation, phone calls, and supervision in office"
-     },
-     {
-      "type": "text",
-      "name": "question5",
+      "name": "team_hours_spent",
       "title": "Hours spent in community with clients face-to-face, job development, meetings at VR, and driving time"
      },
      {
       "type": "text",
-      "name": "question6",
+      "name": "community_hours_spent",
+      "title": "# Hours spent in treatment team meetings and vocational unit meetings, writing notes/ documentation, phone calls, and supervision in office"
+     },
+     {
+      "type": "text",
+      "name": "train_PTO_hours_spent",
       "title": "Hours in spent in training or PTO"
      }
     ],
