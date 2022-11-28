@@ -1,26 +1,16 @@
 const mongodb = require('mongodb');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+const dbConfig = require("../api/db.config");
 
-dotenv.config();
-const { DATABASE_URI } = process.env;
+mongoose.Promise = global.Promise;
 
-if (!DATABASE_URI) {
-    console.error("No ATLAS_URI environment variable has been defined in config.env");
-    process.exit(1);
-}
+const db = {};
+db.mongoose = mongoose;
+db.url = dbConfig.url;
+db.personLevel = require("../api/models/personLevelSchema")(mongoose);
+db.closed = require("../api/models/closedSchema")(mongoose);
+db.staffing = require("../api/models/staffingSchema")(mongoose);
+db.jobDev = require("../api/models/jobDevSchema")(mongoose);
+db.IPSLog = require("../api/models/IPSLogSchema")(mongoose);
 
-async function connectToMongo() {
-    try {
-        mongoose.connect(DATABASE_URI);
-        console.log("Successfully connected to the server");
-
-    } catch (e) {
-        console.log(e.message);
-    }
-}
-
-module.exports = {
-    // collections,
-    connectToMongo
-}
+module.exports = db;
