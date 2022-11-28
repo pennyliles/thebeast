@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
+
 import { Model, StylesManager } from "survey-core";
-
 // const SURVEY_ID = 1;
-
 StylesManager.applyTheme("defaultV2");
-
 const surveyJson = {
   "title": "Program Information",
   "description": "Tell us about your team!",
@@ -94,13 +93,15 @@ const surveyJson = {
   ]
  };
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+ @Component({
+  selector: 'app-teaminfo',
+  templateUrl: './teaminfo.component.html',
+  styleUrls: ['./teaminfo.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'My First Survey';
+
+
+export class TeaminfoComponent implements OnInit {
+  title = 'teaminfo survey';
   surveyModel!: Model;
   alertResults (sender: { data: any; }) {
     const results = JSON.stringify(sender.data);
@@ -129,3 +130,4 @@ export class AppComponent implements OnInit {
 //   });
 //   request.send(JSON.stringify(json));
 // }
+
