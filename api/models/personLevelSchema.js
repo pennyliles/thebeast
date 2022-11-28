@@ -4,6 +4,7 @@ const personLevelSchema = new mongoose.Schema({
     uid: String,
     phase_of_service: String,
     first_date: String,
+    ESP_assigned: String,
     ipe_with_vr: String,
     vr_id: Number,
     county_id: Number,
