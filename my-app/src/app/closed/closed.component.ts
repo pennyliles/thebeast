@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-
-
 import { Model, StylesManager } from "survey-core";
-
 
 // const SURVEY_ID = 1;
 StylesManager.applyTheme("defaultV2");
@@ -17,32 +13,32 @@ const surveyJson = {
     "elements": [
      {
       "type": "text",
-      "name": "question1",
+      "name": "uid",
       "title": "What is the ID # (Indicate with an * if they are part of the TCL housing voucher program)"
      },
      {
       "type": "text",
-      "name": "question2",
+      "name": "ESP",
       "title": "What is the name of the ESP"
      },
      {
       "type": "text",
-      "name": "question3",
+      "name": "closure_date",
       "title": "What was the Closure Date"
      },
      {
       "type": "text",
-      "name": "question4",
+      "name": "employment_status",
       "title": "Status:  Employed/ Unemployed"
      },
      {
       "type": "text",
-      "name": "question5",
+      "name": "engagement_activities",
       "title": "Please list types of Assertive Engagement Activities Utilized (e.g., phone calls, texts, sent a letter, home/community visits, coordinated with mental health team, TL/ESP/EPM contact, outreached natural supports)"
      },
      {
       "type": "text",
-      "name": "question6",
+      "name": "closure_reason",
       "title": "Please tell the reason for closure (e.g., unable to contact, requested discharge, moved out of of catchment, incarcerated, death, graduation)"
      }
     ],

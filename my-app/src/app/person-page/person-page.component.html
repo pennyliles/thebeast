@@ -1,0 +1,33 @@
+
+
+
+  <smart-table #table id="table" style="width: 850px;">
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">UID</th>
+                <th scope="col">Phase of Service</th>
+                <th scope="col">First Date</th>
+                <th scope="col">IPE with VR</th>
+                <th scope="col">VR ID</th>
+                
+                <th scope="col">County ID</th>
+                <th scope="col">Current Clinical Services</th>
+                <th scope="col">Clinical Services Agency</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of tableData">
+                <td>{{ row.uid }}</td>
+                <td>{{ row.phase_of_service }}</td>
+                <td>{{ row.first_date }}</td>
+                <td>{{ row.ipe_with_vr }}</td>
+                <td>{{ row.vr_id}}</td>
+                <td>{{ row.count_id }}</td>
+                <td>{{ row.current_clinical_services }}</td>
+                <td>{{ row.clinical_services_agency }}</td>
+            </tr>         
+        </tbody>
+    </table>
+</smart-table>
