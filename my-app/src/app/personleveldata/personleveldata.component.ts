@@ -15,52 +15,52 @@ const surveyJson = {
     "elements": [
      {
       "type": "text",
-      "name": "question1",
+      "name": "uid",
       "title": "What is the client ID # (Indicate with an * if they are part of the TCL housing voucher program)"
      },
      {
       "type": "text",
-      "name": "question2",
+      "name": "phase_of_service",
       "title": "What is the Phase of Service (Job Search, Working, School, Job Search and School, or Working and School)"
      },
      {
       "type": "text",
-      "name": "question3",
+      "name": "first_date",
       "title": "What is the date of first Face to Face ESP Contact"
      },
      {
       "type": "text",
-      "name": "question4",
+      "name": "ESP",
       "title": "who is the ESP Assigned"
      },
      {
       "type": "text",
-      "name": "question5",
+      "name": "ipe_with_vr",
       "title": "Do they have an IPE with VR? Y/N"
      },
      {
       "type": "text",
-      "name": "question6",
+      "name": "vr_id",
       "title": "VR Unit ID"
      },
      {
       "type": "text",
-      "name": "question7",
+      "name": "county_id",
       "title": "What is the County ID"
      },
      {
       "type": "text",
-      "name": "question8",
+      "name": "current_clinical_services",
       "title": "What is the Current Clinical Services--type of service"
      },
      {
       "type": "text",
-      "name": "question9",
+      "name": "clinical_services_agency",
       "title": "What is the Clinical Services--Agency(s)"
      },
      {
       "type": "dropdown",
-      "name": "question10",
+      "name": "benefits",
       "title": "Does this person receive benefits (e.g., SSI, SSDI, Housing Subsidy, Food Stamps, etc.)?",
       "choices": [
        {
@@ -87,63 +87,74 @@ const surveyJson = {
      },
      {
       "type": "text",
-      "name": "question11",
+      "name": "first_contact",
       "title": "First Face to Face Employer Contact--made by ESP or person receiving IPS services(date)"
      },
      {
       "type": "text",
-      "name": "question12",
+      "name": "start_date",
       "title": "Start Date of Most Recent Job (date)"
      },
      {
       "type": "text",
-      "name": "question13",
+      "name": "pre_f_f_contact_date",
       "title": "Date of ESP F-F contact one week PRIOR to job start?"
      },
      {
       "type": "text",
-      "name": "question14",
+      "name": "post_f_f_contact_date",
       "title": "Date of ESP F-F contact within 3 days of job start?"
      },
      {
       "type": "text",
-      "name": "question15",
+      "name": "f_f_contacts",
       "title": "How many times did the ESP see the person F-F for the 1st month on the job?"
      },
      {
       "type": "text",
-      "name": "question16",
+      "name": "employer_name",
       "title": "What was the name of this Employer "
      },
      {
       "type": "text",
-      "name": "question17",
+      "name": "job_title",
+      "title": "Can you provide a Job Title"
+     },
+
+     {
+      "type": "text",
+      "name": "job_duties",
       "title": "Can you provide a Brief Description of Job Duties"
      },
      {
       "type": "text",
-      "name": "question18",
+      "name": "hourly_pay",
       "title": "What was the Average Hourly Pay"
      },
      {
       "type": "text",
-      "name": "question19",
+      "name": "end_date ",
       "title": "What was the End Date of Most Recent Job loss in IPS"
      },
      {
       "type": "text",
-      "name": "question20",
-      "title": "What school did they go to? "
+      "name": "school_name",
+      "title": "What school did they go to?"
      },
      {
       "type": "text",
-      "name": "question21",
-      "title": "What degree did they earn at that school"
+      "name": "cert_degree",
+      "title": "What degree did they earn at that school?"
      },
      {
       "type": "text",
-      "name": "question22",
-      "title": "Were they a full time or part time student"
+      "name": "full_or_part",
+      "title": "Were they a full time or part time student?"
+     },
+     {
+      "type": "text",
+      "name": "hours",
+      "title": "How many hours did they work?"
      }
     ],
     "title": "Please tell us about the person level data ",
