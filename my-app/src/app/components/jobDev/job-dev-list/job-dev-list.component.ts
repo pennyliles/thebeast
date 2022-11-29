@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JobDev } from 'src/app/models/job-dev.model'
+import { JobDevService } from 'src/app/services/job-dev.service';
 
 @Component({
   selector: 'app-job-dev-list',
@@ -7,9 +9,63 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobDevListComponent implements OnInit {
 
-  constructor() { }
+  JobDevs?: JobDev[];
+  name = '';
+
+  constructor(private JobDevService: JobDevService) { }
 
   ngOnInit(): void {
+    this.retrieveLogs();
   }
 
+  retrieveLogs(): void {
+    this.JobDevService.getAll()
+      .subscribe({
+        next: (data) => {
+          this.JobDevs = data
+          console.log(data)
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  deleteAll(): void {
+    this.JobDevService.deleteAll()
+      .subscribe({
+        next: (res) => {
+          this.refreshList()
+          console.log(res)
+        },
+        error: (e) => console.error(e)
+      })
+  }
+
+  deleteOne(id: any): void {
+    this.JobDevService.delete(id)
+      .subscribe({
+        next: (res) => {
+          this.refreshList()
+          console.log(res)
+        },
+        error: (e) => console.error(e)
+      })
+  }
+
+  refreshList(): void {
+    this.retrieveLogs();
+  }
+
+  // searchName(): void {
+  //   this.currentLog = {};
+  //   this.currentIndex = -1;
+
+  //   this.JobDevService.get(this.name)
+  //     .subscribe({
+  //       next: (data) => {
+  //         this.JobDevs = data;
+  //         console.log(data);
+  //       },
+  //       error: (e) => console.error(e)
+  //     });
+  // }
 }

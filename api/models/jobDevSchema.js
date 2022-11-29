@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // Create a schema
 const jobDevSchema = new mongoose.Schema({
     date_participated: [String],
-    uid: Number,
+    uid: String,
     employment_goal: String,
     employer_contacted: String,
     employer_hiring: String,

@@ -1,1 +1,59 @@
-<p>job-dev-list works!</p>
+<div class="list row">
+  <div class="center">
+  <h4>Job Development Logs</h4>
+  <a routerLink="/addjobDev"><button mat-raised-button color="primary">Add Job Development Log</button></a>
+    <!-- <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by title"
+        [(ngModel)]="name"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchName()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>  -->
+  
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Date Participated</th>
+                <th scope="col">UID</th>
+                <th scope="col">Employment Goal</th>
+                <th scope="col">Employer Contacted</th>
+                <th scope="col">Hiring Authority</th>
+                <th scope="col">Contact Method</th>
+                <th scope="col">Date of Contact</th>
+                <th scope="col">Nature of Visit</th>
+                <th scope="col">Description of Visit</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let JobDev of JobDevs">
+                <td>{{ JobDev.date_participated }}</td>
+                <td>{{ JobDev.uid }}</td>
+                <td>{{ JobDev.employment_goal }}</td>
+                <td>{{ JobDev.employer_contacted }}</td>
+                <td>{{ JobDev.employer_hiring }}</td>
+                <td>{{ JobDev.contact_method }}</td>
+                <td>{{ JobDev.date_of_contact }}</td>
+                <td>{{ JobDev.nature_of_visit }}</td>
+                <td>{{ JobDev.visit_desc }}</td>
+                <button mat-raised-button color="warn" (click)="deleteOne(this.JobDev.uid)">Delete Record</button>
+            </tr>         
+        </tbody>
+    </table>
+    
+    <button mat-raised-button color="warn" (click)="deleteAll()">Delete All Records</button>
+
+    </div>
+
+</div>
