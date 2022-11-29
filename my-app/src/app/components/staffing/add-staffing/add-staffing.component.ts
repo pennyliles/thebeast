@@ -22,13 +22,15 @@ const surveyJson = {
         {
           "type": "text",
           "name": "eval_dates",
-          "title": "When was the Fidelity Evaluation dates? (MM/DD/YYYY)",
+          "title": "When was the Fidelity Evaluation dates?",
+          "description": "MM/DD/YYYY",
           "isRequired": true
         },
         {
           "type": "text",
           "name": "date_completed",
-          "title": "What was the date completed? (MM/DD/YYYY)",
+          "title": "What was the date the evaluation completed?",
+          "description": "MM/DD/YYYY",
           "isRequired": true
         },
         {
@@ -52,18 +54,21 @@ const surveyJson = {
         {
           "type": "text",
           "name": "start_date",
-          "title": "What was the date they started working on the IPS team? (MM/DD/YYYY)",
+          "title": "What was the date they started working on the IPS team?",
+          "description": "MM/DD/YYYY",
           "isRequired": true
         },
         {
           "type": "text",
           "name": "end_data",
-          "title": "Date employment ended (if applicable) (MM/DD/YYYY)"
+          "title": "Date employment ended (if applicable)",
+          "description": "MM/DD/YYYY",
         },
         {
           "type": "text",
           "name": "hours_worked",
           "title": "How many hours worked each week on the IPS Team?",
+          "description": "Enter a number.",
           "isRequired": true
         },
         {

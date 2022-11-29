@@ -14,7 +14,8 @@ const surveyJson = {
         {
           "type": "text",
           "name": "uid",
-          "title": "What is the ID # (Indicate with an * if they are part of the TCL housing voucher program)",
+          "title": "What is the UID of the patient?",
+          "description": "(Indicate with an * if they are part of the TCL housing voucher program)",
           "isRequired": true
         },
         {
@@ -26,29 +27,42 @@ const surveyJson = {
         {
           "type": "text",
           "name": "closure_date",
-          "title": "What was the Closure Date? (MM/DD/YYYY)",
+          "title": "What was the Closure Date?",
+          "description": "MM/DD/YYYY format.",
           "isRequired": true
         },
         {
-          "type": "text",
+          "type": "radiogroup",
           "name": "employment_status",
-          "title": "Status: Employed/ Unemployed",
+          "title": "Employment Status: Employed/ Unemployed",
+          "choices": [
+            {
+              "value": "Employed",
+              "text": "Employed"
+            },
+            {
+              "value": "Unemployed",
+              "text": "Unemployed"
+            }
+          ],
           "isRequired": true
         },
         {
           "type": "text",
           "name": "engagement_activities",
-          "title": "Please list types of Assertive Engagement Activities Utilized (e.g., phone calls, texts, sent a letter, home/community visits, coordinated with mental health team, TL/ESP/EPM contact, outreached natural supports).",
+          "title": "Please list types of Assertive Engagement Activities Utilized.",
+          "description": "(e.g., phone calls, texts, sent a letter, home/community visits, coordinated with mental health team, TL/ESP/EPM contact, outreached natural supports)",
           "isRequired": true
         },
         {
           "type": "text",
           "name": "closure_reason",
-          "title": "Please tell the reason for closure (e.g., unable to contact, requested discharge, moved out of of catchment, incarcerated, death, graduation).",
+          "title": "Please tell the reason for closure.",
+          "description": " (e.g., unable to contact, requested discharge, moved out of of catchment, incarcerated, death, graduation)",
           "isRequired": true
         }
       ],
-      "title": "Please tell us about the closed cases.",
+      "title": "Please tell us about the Closed Cases.",
       "description": "Closed Survey "
     }
   ]
@@ -63,6 +77,20 @@ export class AddClosedComponent implements OnInit {
 
   title = 'IPS Log Survey';
   surveyModel!: Model;
+
+  // alertResults(sender: { data: any; }) {
+  //   const results = JSON.stringify(sender.data);
+  //   alert(results);
+  //   // saveSurveyResults(
+  //   //   "https://your-web-service.com/" + SURVEY_ID,
+  //   //   sender.data
+  //   // )
+  // }
+  // ngOnInit() {
+  //   const survey = new Model(surveyJson);
+  //   survey.onComplete.add(this.alertResults);
+  //   this.surveyModel = survey;
+  // }
 
   ngOnInit() {
     const survey = new Model(surveyJson);

@@ -21,37 +21,43 @@ const surveyJson = {
         {
           "type": "text",
           "name": "time_period",
-          "title": "What was the time period? (MM-DD-YYYY - MM-DD-YYY)",
+          "title": "What was the time period?",
+          "description": "MM/DD/YYYY",
           "isRequired": true
         },
         {
           "type": "text",
           "name": "work_week",
-          "title": "Work week (MM-DD-YYYY)",
+          "title": "When was the work week?",
+          "description": "MM/DD/YYYY",
           "isRequired": true
         },
         {
           "type": "text",
           "name": "hours_worked",
-          "title": "Hours worked in week on the IPS Team",
+          "title": "Hours worked in week on the IPS Team.",
+          "description": "Enter a number.",
           "isRequired": true
         },
         {
           "type": "text",
           "name": "team_hours_spent",
-          "title": "Hours spent in community with clients face-to-face, job development, meetings at VR, and driving time",
+          "title": "Hours spent in community with clients face-to-face, job development, meetings at VR, and driving time.",
+          "description": "Enter a number.",
           "isRequired": true
         },
         {
           "type": "text",
           "name": "community_hours_spent",
-          "title": "Hours spent in treatment team meetings and vocational unit meetings, writing notes/ documentation, phone calls, and supervision in office",
+          "title": "Hours spent in treatment team meetings and vocational unit meetings, writing notes/ documentation, phone calls, and supervision in office.",
+          "description": "Enter a number.",
           "isRequired": true
         },
         {
           "type": "text",
           "name": "train_PTO_hours_spent",
-          "title": "Hours in spent in training or PTO",
+          "title": "Hours in spent in training or PTO.",
+          "description": "Enter a number.",
           "isRequired": true
         }
       ],
