@@ -5,7 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { TableModule } from 'smart-webcomponents-angular/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { SurveyModule } from "survey-angular-ui";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -55,8 +57,9 @@ import { AddClosedComponent } from './components/closed/add-closed/add-closed.co
     TableModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCheckboxModule,
-    SurveyModule
+    SurveyModule,
+    MatTableModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
