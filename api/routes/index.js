@@ -57,5 +57,4 @@ router.patch('/ipslog/:id', IPSLogController.updateRecord);
 router.delete('/ipslog/:id', IPSLogController.deleteRecord);
 router.delete('/ipslog', IPSLogController.deleteAllRecords);
 
-
 module.exports = router;

@@ -1,21 +1,25 @@
-const mongodb = require('mongodb');
-const dotenv = require('dotenv');
 const cors = require('cors');
 const express = require('express');
-const db = require('../api/database');
 
+const db = require('../api/database');
+const routes = require("./routes/index");
+
+/* Creating an express app on port 8080 */
 const app = express();
 const port = 8080;
 
+/* Initalizing cors */
 var corsOptions = {
   origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
 
+/* Allowing express to use jsons */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+/* Connecting to MongoDB database through mongoose */
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,
@@ -29,11 +33,10 @@ db.mongoose
     process.exit();
   });
 
-/* Routers */
-const routes = require("./routes/index");
-
+/* Connecting to routers */
 app.use('/', routes);
 
+/* Show the app started */
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 })

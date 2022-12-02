@@ -1,8 +1,12 @@
-const mongodb = require('mongodb');
 const mongoose = require('mongoose');
 const dbConfig = require("../api/db.config");
 
 mongoose.Promise = global.Promise;
+
+/* 
+Creating a db instance and connecting to MongoDB through mongoose.
+Adding the MongoDB database URI and initializing the survey collections
+*/
 
 const db = {};
 db.mongoose = mongoose;
