@@ -12,10 +12,6 @@ export class ClosedListComponent implements OnInit {
   displayedColumns: string[] = ClosedColumns.map((col) => col.key);
   dataSource: any = [];
   columnsSchema: any = ClosedColumns;
-  employed: any = [
-    { value: "Employed" },
-    { value: "Unemployed" }
-  ];
 
   name = '';
 
@@ -72,7 +68,6 @@ export class ClosedListComponent implements OnInit {
         error: (e) => console.error(e)
       })
   }
-
 
   // searchName(): void {
   //   this.currentLog = {};
