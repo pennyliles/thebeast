@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { JobDev } from '../models/job-dev.model';
 
-const baseUrl = 'http://localhost:8080/jobDev';
+const baseUrl = 'http://localhost:3000/jobDev';
 
 @Injectable({
   providedIn: 'root'

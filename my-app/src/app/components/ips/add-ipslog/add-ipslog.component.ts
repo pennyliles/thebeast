@@ -82,7 +82,7 @@ export class AddIpslogComponent implements OnInit {
     survey.onComplete.add(function (sender: any, options: any) {
       options.showDataSaving();
       const xhr = new XMLHttpRequest();
-      xhr.open("POST", 'http://localhost:8080/ipslog');
+      xhr.open("POST", 'http://localhost:3000/ipslog');
       xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
       xhr.onload = xhr.onerror = function () {
         if (xhr.status == 200) {
@@ -90,7 +90,7 @@ export class AddIpslogComponent implements OnInit {
           options.showDataSavingSuccess();
           // Alternatively, you can clear all messages:
           // options.showDataSavingClear();
-          window.location.href = 'http://localhost:8081/ipslog';
+          window.location.href = 'http://localhost:4200/ipslog';
         } else {
           // Display the "Error" message (pass a string value to display a custom message)
           options.showDataSavingError();

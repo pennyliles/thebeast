@@ -203,7 +203,7 @@ export class AddPersonComponent implements OnInit {
     survey.onComplete.add(function (sender: any, options: any) {
       options.showDataSaving();
       const xhr = new XMLHttpRequest();
-      xhr.open("POST", 'http://localhost:8080/person_level');
+      xhr.open("POST", 'http://localhost:3000/person_level');
       xhr.setRequestHeader("Content-Type", "application/json; charset=utf-8");
       xhr.onload = xhr.onerror = function () {
         if (xhr.status == 200) {
@@ -211,7 +211,7 @@ export class AddPersonComponent implements OnInit {
           options.showDataSavingSuccess();
           // Alternatively, you can clear all messages:
           // options.showDataSavingClear();
-          window.location.href = 'http://localhost:8081/person';
+          window.location.href = 'http://localhost:4200/person';
         } else {
           // Display the "Error" message (pass a string value to display a custom message)
           options.showDataSavingError();

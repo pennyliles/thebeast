@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IpsLog } from '../models/ips-log.model';
 
-const baseUrl = 'http://localhost:8080/ipslog';
+const baseUrl = 'http://localhost:3000/ipslog';
 
 @Injectable({
   providedIn: 'root'
