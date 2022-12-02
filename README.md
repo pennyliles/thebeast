@@ -19,9 +19,7 @@ The database is MongoDB.
 Frontend: HTML/CSS, Typescript  
 Backend: Javascript  
 
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="my-app/imgs/architecture_diagram.png">
-</picture>
+![Architecture Diagram](https://github.com/frachen/thebeast/blob/backend/my-app/imgs/architecture_diagram.png)
 
 # Frontend Structure
 
@@ -38,7 +36,7 @@ Resources used for the frontend:
 The backend follows a RESTful API structure. 
 
 Resources used for the backend:
-> [RESTful API structure](https://www.coreycleary.me/project-structure-for-an-express-rest-api-when-there-is-no-standard-way).
+> [RESTful API structure](https://www.coreycleary.me/project-structure-for-an-express-rest-api-when-there-is-no-standard-way).  
 > [Express Routing](https://expressjs.com/en/guide/routing.html#express-router)
 
 ## Starting the application
