@@ -66,4 +66,4 @@ ng serve
 > And open it in your `localhost` browser
 
 **More detailed breakdown of the application was provided to the client.**  
-**For more questions, contact us [here](https://tarheels.live/comp523teamb2022/team/)**
+**For more questions, contact us [here](https://tarheels.live/comp523teamb2022/team/).**
