@@ -23,6 +23,7 @@
     "bootstrap": "^4.6.2",
     "hammerjs": "^2.0.8",
     "rxjs": "~7.5.0",
+    "smart-webcomponents-angular": "^14.4.0",
     "survey-angular-ui": "^1.9.60",
     "surveyjs": "^4.0.1",
     "tslib": "^2.3.0",

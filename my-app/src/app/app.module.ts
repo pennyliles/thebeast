@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { TableModule } from 'smart-webcomponents-angular/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -57,7 +56,6 @@ import { AddClosedComponent } from './components/closed/add-closed/add-closed.co
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    TableModule,
     BrowserAnimationsModule,
     MatButtonModule,
     SurveyModule,
