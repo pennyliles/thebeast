@@ -5,19 +5,19 @@ The intended goal of "The Beast" is to make the data collection more streamline 
 
 ## Project Structure
 
-"The Beast" utilizes the MEAN stack.
-    - MongoDB
-    - Express.js
-    - Angular
-    - Node.js
+"The Beast" utilizes the MEAN stack.  
+    - MongoDB  
+    - Express.js  
+    - Angular  
+    - Node.js  
 
-The frontend web application is built up using Angular and Survey.js.
-The backend API is built up using Node.js, Express.js, and mongoose for database connection.
+The frontend web application is built up using Angular and Survey.js.  
+The backend API is built up using Node.js, Express.js, and mongoose for database connection.  
 The database is MongoDB.
 
-** Programming Languages **
-Frontend: HTML/CSS, Typescript
-Backend: Javascript
+** Programming Languages **  
+Frontend: HTML/CSS, Typescript  
+Backend: Javascript  
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="my-app/imgs/architecture_diagram.png">
@@ -30,8 +30,8 @@ The frontend has component folders for each required survey. Within those folder
 There is also a model folder, with instances that relate to each survey for data interfacing/modeling purposes, and a service folder that has components for HTTP to the backend API connections.
 
 Resources used for the frontend:
-> [Connecting Angular to a Node.js application] (https://www.bezkoder.com/mean-stack-crud-example-angular-14/)
-> [Creating a dynamic Angular Mat Table] (https://muhimasri.com/blogs/create-an-editable-dynamic-table-using-angular-material/)
+> [Connecting Angular to a Node.js application](https://www.bezkoder.com/mean-stack-crud-example-angular-14/)  
+> [Creating a dynamic Angular Mat Table](https://muhimasri.com/blogs/create-an-editable-dynamic-table-using-angular-material/)  
 
 # Backend Structure
 
@@ -39,7 +39,7 @@ The backend follows a RESTful API structure.
 
 Resources used for the backend:
 > [RESTful API structure](https://www.coreycleary.me/project-structure-for-an-express-rest-api-when-there-is-no-standard-way).
-> [Express Routing] (https://expressjs.com/en/guide/routing.html#express-router)
+> [Express Routing](https://expressjs.com/en/guide/routing.html#express-router)
 
 ## Starting the application
 
