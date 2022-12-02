@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Staffing } from 'src/app/models/staffing.model'
+import { Staffing, StaffingColumns } from 'src/app/models/staffing.model'
 import { StaffingService } from 'src/app/services/staffing.service';
 
 @Component({
@@ -9,7 +9,9 @@ import { StaffingService } from 'src/app/services/staffing.service';
 })
 export class StaffingListComponent implements OnInit {
 
-  Staffings?: Staffing[];
+  displayedColumns: string[] = StaffingColumns.map((col) => col.key);
+  dataSource: any = [];
+  columnsSchema: any = StaffingColumns;
   name = '';
 
   constructor(private StaffingService: StaffingService) { }
@@ -22,7 +24,7 @@ export class StaffingListComponent implements OnInit {
     this.StaffingService.getAll()
       .subscribe({
         next: (data) => {
-          this.Staffings = data
+          this.dataSource = data
           console.log(data)
         },
         error: (e) => console.error(e)
@@ -53,6 +55,17 @@ export class StaffingListComponent implements OnInit {
 
   refreshList(): void {
     this.retrieveLogs();
+  }
+
+  editEntry(entry: Staffing) {
+    this.StaffingService.update(entry.staff_name, entry)
+      .subscribe({
+        next: (res) => {
+          this.refreshList();
+          console.log(res);
+        },
+        error: (e) => console.error(e)
+      })
   }
 
   // searchName(): void {

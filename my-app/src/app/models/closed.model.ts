@@ -8,18 +8,18 @@ export class Closed {
 }
 
 export const ClosedColumns = [
-    {
-        key: 'isSelected',
-        type: 'isSelected',
-        label: '',
-    },
+    // {
+    //     key: 'isSelected',
+    //     type: 'isSelected',
+    //     label: '',
+    // },
     {
         key: 'uid',
         type: 'text',
-        label: 'uid',
+        label: 'UID',
     },
     {
-        key: 'esp',
+        key: 'ESP',
         type: 'text',
         label: 'ESP',
     },
@@ -30,7 +30,7 @@ export const ClosedColumns = [
     },
     {
         key: 'employment_status',
-        type: 'text',
+        type: 'select',
         label: 'Employment Status',
     },
     {
@@ -47,6 +47,5 @@ export const ClosedColumns = [
         key: 'isEdit',
         type: 'isEdit',
         label: '',
-    },
-
+    }
 ]

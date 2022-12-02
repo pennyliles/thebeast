@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { JobDev } from 'src/app/models/job-dev.model'
+import { JobDev, JobColumns } from 'src/app/models/job-dev.model'
 import { JobDevService } from 'src/app/services/job-dev.service';
 
 @Component({
@@ -9,7 +9,9 @@ import { JobDevService } from 'src/app/services/job-dev.service';
 })
 export class JobDevListComponent implements OnInit {
 
-  JobDevs?: JobDev[];
+  displayedColumns: string[] = JobColumns.map((col) => col.key);
+  dataSource: any = [];
+  columnsSchema: any = JobColumns;
   name = '';
 
   constructor(private JobDevService: JobDevService) { }
@@ -22,7 +24,7 @@ export class JobDevListComponent implements OnInit {
     this.JobDevService.getAll()
       .subscribe({
         next: (data) => {
-          this.JobDevs = data
+          this.dataSource = data
           console.log(data)
         },
         error: (e) => console.error(e)
@@ -53,6 +55,17 @@ export class JobDevListComponent implements OnInit {
 
   refreshList(): void {
     this.retrieveLogs();
+  }
+
+  editEntry(entry: JobDev) {
+    this.JobDevService.update(entry.uid, entry)
+      .subscribe({
+        next: (res) => {
+          this.refreshList();
+          console.log(res);
+        },
+        error: (e) => console.error(e)
+      })
   }
 
   // searchName(): void {

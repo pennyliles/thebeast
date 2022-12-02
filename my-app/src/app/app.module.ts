@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatOptionModule } from '@angular/material/core';
 import { SurveyModule } from "survey-angular-ui";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -63,7 +64,8 @@ import { AddClosedComponent } from './components/closed/add-closed/add-closed.co
     MatTableModule,
     MatInputModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatOptionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

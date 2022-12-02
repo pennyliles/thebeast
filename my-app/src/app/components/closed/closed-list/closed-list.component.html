@@ -1,76 +1,8 @@
 <div class="list row">
   <div class="center">
     <h4>Closed Logs</h4>
+
     <a routerLink="/addClosed"><button mat-raised-button color="primary">Add Log</button></a>
-    <!-- <div class="col-md-8">
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by title"
-        [(ngModel)]="name"
-      />
-      <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchName()"
-        >
-          Search
-        </button>
-      </div>
-    </div>
-  </div>  -->
-
-    <!-- <table>
-      <thead>
-        <tr>
-          <th scope="col">UID</th>
-          <th scope="col">ESP</th>
-          <th scope="col">Closure Date</th>
-          <th scope="col">Status</th>
-          <th scope="col">Engagement Activities</th>
-          <th scope="col">Closure Reason</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let Closed of Closeds">
-          <td>{{ Closed.uid }}</td>
-          <td>{{ Closed.ESP }}</td>
-          <td>{{ Closed.closure_date }}</td>
-          <td>{{ Closed.employment_status }}</td>
-          <td>{{ Closed.engagement_activities }}</td>
-          <td>{{ Closed.closure_reason }}</td>
-
-          <div *ngIf="!this.isEdit">
-            <td>
-              <button mat-icon-button color="basic" (click)="editEntry()">
-                <mat-icon>edit</mat-icon>
-              </button>
-            </td>
-            <td>
-              <button mat-icon-button color="warn" (click)="deleteOne(this.Closed.uid)">
-                <mat-icon>delete</mat-icon>
-              </button>
-            </td>
-          </div>
-
-          <div *ngIf="this.isEdit">
-            <td>
-              <button mat-icon-button color="basic" (click)="editEntry()">
-                <mat-icon>done</mat-icon>
-              </button>
-            </td>
-            <td class="delete">
-              <button mat-icon-button color="warn" (click)="editEntry()">
-                <mat-icon>clear</mat-icon>
-              </button>
-            </td>
-          </div>
-
-        </tr>
-      </tbody>
-    </table> -->
 
     <table mat-table [dataSource]="dataSource">
       <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema">
@@ -79,10 +11,11 @@
         </th>
         <td mat-cell *matCellDef="let element">
           <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
-            <ng-container *ngSwitchCase="'isSelected'">
+            <!-- Code for selecting multiple specific rows
+              <ng-container *ngSwitchCase="'isSelected'">
               <mat-checkbox (change)="element.isSelected = $event.checked"></mat-checkbox>
-            </ng-container>
-            <div class="btn-edit" *ngSwitchCase="'isEdit'">
+            </ng-container> -->
+            <div *ngSwitchCase="'isEdit'">
               <button mat-icon-button color="basic" (click)="element.isEdit = !element.isEdit">
                 <mat-icon>edit</mat-icon>
               </button>
@@ -94,16 +27,19 @@
               {{ element[col.key] }}
             </span>
           </div>
-          <div [ngSwitch]="col.type" *ngIf="element.isEdit">
-            <div *ngSwitchCase="'isSelected'"></div>
-            <div class="btn-edit" *ngSwitchCase="'isEdit'">
-              <button mat-button (click)="editEntry(element.uid, element)" [disabled]="disableSubmit(element.id)">
-                Done
+          <div class="edit-table" [ngSwitch]="col.type" *ngIf="element.isEdit">
+            <!-- <div *ngSwitchCase="'isSelected'"></div> -->
+            <div *ngSwitchCase="'isEdit'">
+              <button mat-icon-button (click)="editEntry(element); element.isEdit = !element.isEdit">
+                <mat-icon>done</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="element.isEdit = !element.isEdit">
+                <mat-icon>clear</mat-icon>
               </button>
             </div>
             <mat-form-field class="form-input" *ngSwitchDefault>
               <input matInput [required]="col.required" [pattern]="col.pattern" [type]="col.type"
-                [(ngModel)]="element[col.key]" (change)="inputHandler($event, element.id, col.key)" />
+                [(ngModel)]="element[col.key]" />
             </mat-form-field>
           </div>
         </td>

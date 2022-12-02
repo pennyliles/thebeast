@@ -37,15 +37,26 @@ const surveyJson = {
           "isRequired": true
         },
         {
-          "type": "text",
+          "type": "radiogroup",
           "name": "employer_hiring",
-          "title": "Does the Employer Contact has hiring authority? Y/N",
+          "title": "Does the Employer Contact have firing authority?",
+          "choices": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ],
           "isRequired": true
         },
         {
           "type": "text",
           "name": "contact_method",
-          "title": "How Contacted? (i.e., in person, via telephone, email, individual served made contact, etc.)",
+          "title": "Contact method?",
+          "description": "i.e., in person, via telephone, email, individual served made contact, etc.",
           "isRequired": true
         },
         {
@@ -55,9 +66,23 @@ const surveyJson = {
           "isRequired": true
         },
         {
-          "type": "text",
+          "type": "radiogroup",
           "name": "nature_of_visit",
-          "title": "Nature of Visit: First Meeting/ Second Meeting/ Ongoing.",
+          "title": "What was the Nature of the Visit?",
+          "choices": [
+            {
+              "value": "First Meeting",
+              "text": "First Meeting"
+            },
+            {
+              "value": "Second Meeting",
+              "text": "Second Meeting"
+            },
+            {
+              "value": "Ongoing",
+              "text": "Ongoing"
+            }
+          ],
           "isRequired": true
         },
         {

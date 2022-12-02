@@ -6,3 +6,14 @@
     text-align: center;
     align-items: center;
 }
+
+table {
+    width: 100%;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.edit-table {
+    width: 70px;
+}

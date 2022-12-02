@@ -1,61 +1,53 @@
 <div class="list row">
   <div class="center">
-  <h4>Staffing Logs</h4>
-  <a routerLink="/addStaffing"><button mat-raised-button color="primary">Add Staffing Data</button></a>
-    <!-- <div class="col-md-8">
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by title"
-        [(ngModel)]="name"
-      />
-      <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchName()"
-        >
-          Search
-        </button>
-      </div>
-    </div>
-  </div>  -->
-  
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Agency Name</th>
-                <th scope="col">Evaluation Dates</th>
-                <th scope="col">Date Completed</th>
-                <th scope="col">Staff Name</th>
-                <th scope="col">Job Title(s)</th>
-                <th scope="col">Other Roles</th>
-                <th scope="col">Date Started</th>
-                <th scope="col">Employment End</th>
-                <th scope="col">Hours Worked</th>
-                <th scope="col">IPS Trainings</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let Staffing of Staffings">
-                <td>{{ Staffing.agency_name }}</td>
-                <td>{{ Staffing.eval_dates }}</td>
-                <td>{{ Staffing.date_completed }}</td>
-                <td>{{ Staffing.staff_name}}</td>
-                <td>{{ Staffing.job_titles }}</td>
-                <td>{{ Staffing.other_roles }}</td>
-                <td>{{ Staffing.start_date }}</td>
-                <td>{{ Staffing.end_date }}</td>
-                <td>{{ Staffing.hours_worked}}</td>
-                <td>{{ Staffing.IPS_training }}</td>
-                <button mat-raised-button color="warn" (click)="deleteOne(this.Staffing.staff_name)">Delete Record</button>
-            </tr>         
-        </tbody>
+    <h4>Staffing Logs</h4>
+
+    <a routerLink="/addStaffing"><button mat-raised-button color="primary">Add Staffing Log</button></a>
+
+    <table mat-table [dataSource]="dataSource">
+      <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ col.label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
+            <!-- Code for selecting multiple specific rows
+              <ng-container *ngSwitchCase="'isSelected'">
+              <mat-checkbox (change)="element.isSelected = $event.checked"></mat-checkbox>
+            </ng-container> -->
+            <div *ngSwitchCase="'isEdit'">
+              <button mat-icon-button color="basic" (click)="element.isEdit = !element.isEdit">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteOne(this.element.uid)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+            <span *ngSwitchDefault>
+              {{ element[col.key] }}
+            </span>
+          </div>
+          <div class="edit-table" [ngSwitch]="col.type" *ngIf="element.isEdit">
+            <!-- <div *ngSwitchCase="'isSelected'"></div> -->
+            <div *ngSwitchCase="'isEdit'">
+              <button mat-icon-button (click)="editEntry(element); element.isEdit = !element.isEdit">
+                <mat-icon>done</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="element.isEdit = !element.isEdit">
+                <mat-icon>clear</mat-icon>
+              </button>
+            </div>
+            <mat-form-field class="form-input" *ngSwitchDefault>
+              <input matInput [required]="col.required" [pattern]="col.pattern" [type]="col.type"
+                [(ngModel)]="element[col.key]" />
+            </mat-form-field>
+          </div>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
-    
+
     <button mat-raised-button color="warn" (click)="deleteAll()">Delete All Records</button>
 
-    </div>
-
-</div>
+  </div>

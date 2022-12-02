@@ -12,7 +12,10 @@ export class ClosedListComponent implements OnInit {
   displayedColumns: string[] = ClosedColumns.map((col) => col.key);
   dataSource: any = [];
   columnsSchema: any = ClosedColumns;
-  valid: any = {};
+  employed: any = [
+    { value: "Employed" },
+    { value: "Unemployed" }
+  ];
 
   name = '';
 
@@ -59,8 +62,8 @@ export class ClosedListComponent implements OnInit {
     this.retrieveLogs();
   }
 
-  editEntry(id: any, row: Closed) {
-    this.ClosedService.update(id, row)
+  editEntry(entry: Closed) {
+    this.ClosedService.update(entry.uid, entry)
       .subscribe({
         next: (res) => {
           this.refreshList();
@@ -70,19 +73,6 @@ export class ClosedListComponent implements OnInit {
       })
   }
 
-  inputHandler(e: any, id: number, key: string) {
-    if (!this.valid[id]) {
-      this.valid[id] = {};
-    }
-    this.valid[id][key] = e.target.validity.valid;
-  }
-
-  disableSubmit(id: number) {
-    if (this.valid[id]) {
-      return Object.values(this.valid[id]).some((item) => item === false);
-    }
-    return false;
-  }
 
   // searchName(): void {
   //   this.currentLog = {};

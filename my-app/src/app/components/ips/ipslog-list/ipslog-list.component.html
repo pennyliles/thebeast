@@ -1,55 +1,55 @@
 <div class="list row">
   <div class="center">
-  <h4>IPS Logs</h4>
-  <a routerLink="/addIPS"><button mat-raised-button color="primary">Add Log</button></a>
-    <!-- <div class="col-md-8">
-    <div class="input-group mb-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by title"
-        [(ngModel)]="name"
-      />
-      <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchName()"
-        >
-          Search
-        </button>
-      </div>
-    </div>
-  </div>  -->
-  
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Staff Name</th>
-                <th scope="col">Time Period</th>
-                <th scope="col">Work Week</th>
-                <th scope="col">Hours Worked</th>
-                <th scope="col">Team Hours Spent</th>
-                <th scope="col">Community Hours Spent</th>
-                <th scope="col">PTO Hours Spent</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let IPSLog of IPSLogs">
-                <td>{{ IPSLog.staff_name }}</td>
-                <td>{{ IPSLog.time_period }}</td>
-                <td>{{ IPSLog.work_week }}</td>
-                <td>{{ IPSLog.hours_worked }}</td>
-                <td>{{ IPSLog.team_hours_spent }}</td>
-                <td>{{ IPSLog.community_hours_spent }}</td>
-                <td>{{ IPSLog.train_PTO_hours_spent }}</td>
-                <button mat-raised-button color="warn" (click)="deleteOne(this.IPSLog.staff_name)">Delete Record</button>
-            </tr>         
-        </tbody>
+    <h4>IPS Logs</h4>
+
+    <a routerLink="/addIPS"><button mat-raised-button color="primary">Add Log</button></a>
+
+    <table mat-table [dataSource]="dataSource">
+      <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ col.label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div [ngSwitch]="col.type" *ngIf="!element.isEdit">
+            <!-- Code for selecting multiple specific rows
+              <ng-container *ngSwitchCase="'isSelected'">
+              <mat-checkbox (change)="element.isSelected = $event.checked"></mat-checkbox>
+            </ng-container> -->
+            <div *ngSwitchCase="'isEdit'">
+              <button mat-icon-button color="basic" (click)="element.isEdit = !element.isEdit">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteOne(this.element.uid)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+            <span *ngSwitchDefault>
+              {{ element[col.key] }}
+            </span>
+          </div>
+          <div class="edit-table" [ngSwitch]="col.type" *ngIf="element.isEdit">
+            <!-- <div *ngSwitchCase="'isSelected'"></div> -->
+            <div *ngSwitchCase="'isEdit'">
+              <button mat-icon-button (click)="editEntry(element); element.isEdit = !element.isEdit">
+                <mat-icon>done</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="element.isEdit = !element.isEdit">
+                <mat-icon>clear</mat-icon>
+              </button>
+            </div>
+            <mat-form-field class="form-input" *ngSwitchDefault>
+              <input matInput [required]="col.required" [pattern]="col.pattern" [type]="col.type"
+                [(ngModel)]="element[col.key]" />
+            </mat-form-field>
+          </div>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
-    
+
     <button mat-raised-button color="warn" (click)="deleteAll()">Delete All Records</button>
 
-    </div>
+  </div>
 
 </div>
