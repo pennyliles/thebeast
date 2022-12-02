@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { Closed } from 'src/app/models/closed.model'
+import { Closed, ClosedColumns } from 'src/app/models/closed.model'
 import { ClosedService } from 'src/app/services/closed.service';
 
 @Component({
   selector: 'app-closed-list',
   templateUrl: './closed-list.component.html',
-  styleUrls: ['./closed-list.component.css']
+  styleUrls: ['./closed-list.component.css'],
 })
 export class ClosedListComponent implements OnInit {
 
-  Closeds?: Closed[];
+  displayedColumns: string[] = ClosedColumns.map((col) => col.key);
+  dataSource: any = [];
+  columnsSchema: any = ClosedColumns;
+  valid: any = {};
+
   name = '';
 
   constructor(private ClosedService: ClosedService) { }
@@ -22,7 +26,7 @@ export class ClosedListComponent implements OnInit {
     this.ClosedService.getAll()
       .subscribe({
         next: (data) => {
-          this.Closeds = data
+          this.dataSource = data;
           console.log(data)
         },
         error: (e) => console.error(e)
@@ -53,6 +57,31 @@ export class ClosedListComponent implements OnInit {
 
   refreshList(): void {
     this.retrieveLogs();
+  }
+
+  editEntry(id: any, row: Closed) {
+    this.ClosedService.update(id, row)
+      .subscribe({
+        next: (res) => {
+          this.refreshList();
+          console.log(res);
+        },
+        error: (e) => console.error(e)
+      })
+  }
+
+  inputHandler(e: any, id: number, key: string) {
+    if (!this.valid[id]) {
+      this.valid[id] = {};
+    }
+    this.valid[id][key] = e.target.validity.valid;
+  }
+
+  disableSubmit(id: number) {
+    if (this.valid[id]) {
+      return Object.values(this.valid[id]).some((item) => item === false);
+    }
+    return false;
   }
 
   // searchName(): void {

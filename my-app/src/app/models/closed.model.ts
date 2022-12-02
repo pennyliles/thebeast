@@ -6,3 +6,47 @@ export class Closed {
     engagement_activities?: [String];
     closure_reason?: [String];
 }
+
+export const ClosedColumns = [
+    {
+        key: 'isSelected',
+        type: 'isSelected',
+        label: '',
+    },
+    {
+        key: 'uid',
+        type: 'text',
+        label: 'uid',
+    },
+    {
+        key: 'esp',
+        type: 'text',
+        label: 'ESP',
+    },
+    {
+        key: 'closure_date',
+        type: 'text',
+        label: 'Closure Date',
+    },
+    {
+        key: 'employment_status',
+        type: 'text',
+        label: 'Employment Status',
+    },
+    {
+        key: 'engagement_activities',
+        type: 'text',
+        label: 'Engagement Activities',
+    },
+    {
+        key: 'closure_reason',
+        type: 'text',
+        label: 'Closure Reason',
+    },
+    {
+        key: 'isEdit',
+        type: 'isEdit',
+        label: '',
+    },
+
+]
