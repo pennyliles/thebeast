@@ -1,16 +1,71 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { TableModule } from 'smart-webcomponents-angular/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatOptionModule } from '@angular/material/core';
+import { SurveyModule } from "survey-angular-ui";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddIpslogComponent } from './components/ips/add-ipslog/add-ipslog.component';
+import { IpslogDetailsComponent } from './components/ips/ipslog-details/ipslog-details.component';
+import { IpslogListComponent } from './components/ips/ipslog-list/ipslog-list.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { AddJobDevComponent } from './components/jobDev/add-job-dev/add-job-dev.component';
+import { JobDevDetailsComponent } from './components/jobDev/job-dev-details/job-dev-details.component';
+import { JobDevListComponent } from './components/jobDev/job-dev-list/job-dev-list.component';
+import { PersonListComponent } from './components/person/person-list/person-list.component';
+import { ClosedListComponent } from './components/closed/closed-list/closed-list.component';
+import { StaffingListComponent } from './components/staffing/staffing-list/staffing-list.component';
+import { StaffingDetailsComponent } from './components/staffing/staffing-details/staffing-details.component';
+import { ClosedDetailsComponent } from './components/closed/closed-details/closed-details.component';
+import { PersonDetailsComponent } from './components/person/person-details/person-details.component';
+import { AddPersonComponent } from './components/person/add-person/add-person.component';
+import { AddStaffingComponent } from './components/staffing/add-staffing/add-staffing.component';
+import { AddClosedComponent } from './components/closed/add-closed/add-closed.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddIpslogComponent,
+    IpslogDetailsComponent,
+    IpslogListComponent,
+    HomepageComponent,
+    AddJobDevComponent,
+    JobDevDetailsComponent,
+    JobDevListComponent,
+    PersonListComponent,
+    ClosedListComponent,
+    StaffingListComponent,
+    StaffingDetailsComponent,
+    ClosedDetailsComponent,
+    PersonDetailsComponent,
+    AddPersonComponent,
+    AddStaffingComponent,
+    AddClosedComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    TableModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    SurveyModule,
+    MatTableModule,
+    MatInputModule,
+    MatIconModule,
+    MatCheckboxModule,
+    MatOptionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
