@@ -15,7 +15,7 @@ The frontend web application is built up using Angular and Survey.js.
 The backend API is built up using Node.js, Express.js, and mongoose for database connection.  
 The database is MongoDB.
 
-** Programming Languages **  
+**Programming Languages**  
 Frontend: HTML/CSS, Typescript  
 Backend: Javascript  
 
@@ -65,5 +65,5 @@ ng serve
 ```
 > And open it in your `localhost` browser
 
-** More detailed breakdown of the application was provided to the client. **
-** For more questions, contact us [here](https://tarheels.live/comp523teamb2022/team/) **
+**More detailed breakdown of the application was provided to the client.**  
+**For more questions, contact us [here](https://tarheels.live/comp523teamb2022/team/)**
