@@ -20,7 +20,7 @@ const personLevelSchema = new mongoose.Schema({
     job_title: String,
     job_duties: String,
     hourly_pay: Number,
-    end_date: Number,
+    end_date: String,
     school_name: String,
     cert_degree: String,
     full_or_part: String,

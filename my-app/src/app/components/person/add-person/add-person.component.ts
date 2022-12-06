@@ -11,7 +11,7 @@ const surveyJson = {
   "logoPosition": "right",
   "pages": [
     {
-      "name": "page1",
+      "name": "demographics",
       "elements": [
         {
           "type": "text",
@@ -36,7 +36,14 @@ const surveyJson = {
           "name": "ESP",
           "title": "Who is the ESP Assigned?",
           "isRequired": true
-        },
+        }
+      ],
+      "title": "Please tell us about the person level data.",
+      "description": "Person Level Data."
+    },
+    {
+      "name": "VR_data",
+      "elements": [
         {
           "type": "text",
           "name": "ipe_with_vr",
@@ -47,12 +54,19 @@ const surveyJson = {
           "type": "text",
           "name": "vr_id",
           "title": "VR Unit ID?",
+          "description": "Enter a number.",
           "isRequired": true
-        },
+        }
+      ]
+    },
+    {
+      "name": "clinical",
+      "elements": [
         {
           "type": "text",
           "name": "county_id",
           "title": "What is the County ID?",
+          "description": "Enter a number.",
           "isRequired": true
         },
         {
@@ -66,33 +80,16 @@ const surveyJson = {
           "name": "clinical_services_agency",
           "title": "What is the Clinical Services--Agency(s)?",
           "isRequired": true
-        },
+        }
+      ]
+    },
+    {
+      "name": "employment",
+      "elements": [
         {
-          "type": "dropdown",
+          "type": "text",
           "name": "benefits",
           "title": "Does this person receive benefits (e.g., SSI, SSDI, Housing Subsidy, Food Stamps, etc.)?",
-          "choices": [
-            {
-              "value": "item1",
-              "text": "SSI"
-            },
-            {
-              "value": "item2",
-              "text": "SSDI"
-            },
-            {
-              "value": "item3",
-              "text": "Housing Subsidy"
-            },
-            {
-              "value": "item4",
-              "text": "Food Stamps"
-            },
-            {
-              "value": "item5",
-              "text": "Other"
-            }
-          ],
           "isRequired": true
         },
         {
@@ -148,6 +145,7 @@ const surveyJson = {
           "type": "text",
           "name": "hourly_pay",
           "title": "What was the Average Hourly Pay?",
+          "description": "Enter a number.",
           "isRequired": true
         },
         {
@@ -155,7 +153,12 @@ const surveyJson = {
           "name": "end_date ",
           "title": "What was the End Date of Most Recent Job loss in IPS? (MM/DD/YYYY)",
           "isRequired": true
-        },
+        }
+      ]
+    },
+    {
+      "name": "education",
+      "elements": [
         {
           "type": "text",
           "name": "school_name",
@@ -169,20 +172,29 @@ const surveyJson = {
           "isRequired": true
         },
         {
-          "type": "text",
+          "type": "radiogroup",
           "name": "full_or_part",
           "title": "Were they a full time or part time student?",
+          "choices": [
+            {
+              "value": "Full Time",
+              "text": "Full Time"
+            },
+            {
+              "value": "Part Time",
+              "text": "Part Time"
+            }
+          ],
           "isRequired": true
         },
         {
           "type": "text",
           "name": "hours",
           "title": "How many hours did they work?",
+          "description": "Enter a number.",
           "isRequired": true
         }
-      ],
-      "title": "Please tell us about the person level data.",
-      "description": "Person Level Data."
+      ]
     }
   ]
 }
