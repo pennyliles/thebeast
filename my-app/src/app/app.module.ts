@@ -25,6 +25,11 @@ import { StaffingListComponent } from './components/staffing/staffing-list/staff
 import { AddPersonComponent } from './components/person/add-person/add-person.component';
 import { AddStaffingComponent } from './components/staffing/add-staffing/add-staffing.component';
 import { AddClosedComponent } from './components/closed/add-closed/add-closed.component';
+import { DemographicsComponent } from './components/person/person-list/demographics/demographics.component';
+import { VrComponent } from './components/person/person-list/vr/vr.component';
+import { ClinicalComponent } from './components/person/person-list/clinical/clinical.component';
+import { EmploymentComponent } from './components/person/person-list/employment/employment.component';
+import { EducationComponent } from './components/person/person-list/education/education.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,12 @@ import { AddClosedComponent } from './components/closed/add-closed/add-closed.co
     StaffingListComponent,
     AddPersonComponent,
     AddStaffingComponent,
-    AddClosedComponent
+    AddClosedComponent,
+    DemographicsComponent,
+    VrComponent,
+    ClinicalComponent,
+    EmploymentComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule,

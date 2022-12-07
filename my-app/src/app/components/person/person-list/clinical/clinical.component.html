@@ -1,16 +1,9 @@
 <div class="list row">
     <div class="center">
-        <h4>Person Level Logs</h4>
+        <a routerLink="/person"><button mat-raised-button color="primary">Return to person level</button></a>
 
-        <a routerLink="/addPerson"><button mat-raised-button color="primary">Add Log</button></a>
+        <h4>Clinical Logs</h4>
 
-        <div style="margin-top:25px;">
-            <a routerLink="/clinical"><button mat-raised-button color="primary">Clinical Logs</button></a>
-            <a routerLink="/demographics"><button mat-raised-button style="margin-left:10px;" color="primary">Demographic Logs</button></a>
-            <a routerLink="/education"><button mat-raised-button style="margin-left:10px;" color="primary">Education Logs</button></a>
-            <a routerLink="/employment"><button mat-raised-button style="margin-left:10px;" color="primary">Employment Logs</button></a>
-            <a routerLink="/vr"><button mat-raised-button style="margin-left:10px;" color="primary">VR Logs</button></a>
-          </div>
 
         <table mat-table [dataSource]="dataSource">
             <ng-container [matColumnDef]="col.key" *ngFor="let col of columnsSchema">

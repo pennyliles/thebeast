@@ -8,6 +8,11 @@ import { AddClosedComponent } from './components/closed/add-closed/add-closed.co
 import { JobDevListComponent } from './components/jobDev/job-dev-list/job-dev-list.component';
 import { AddJobDevComponent } from './components/jobDev/add-job-dev/add-job-dev.component';
 import { PersonListComponent } from './components/person/person-list/person-list.component';
+import { DemographicsComponent } from './components/person/person-list/demographics/demographics.component';
+import { ClinicalComponent } from './components/person/person-list/clinical/clinical.component';
+import { EducationComponent } from './components/person/person-list/education/education.component';
+import { EmploymentComponent } from './components/person/person-list/employment/employment.component';
+import { VrComponent } from './components/person/person-list/vr/vr.component';
 import { AddPersonComponent } from './components/person/add-person/add-person.component';
 import { StaffingListComponent } from './components/staffing/staffing-list/staffing-list.component';
 import { AddStaffingComponent } from './components/staffing/add-staffing/add-staffing.component';
@@ -24,6 +29,11 @@ const routes: Routes = [
   { path: 'addIPS', component: AddIpslogComponent },
   { path: 'staffing', component: StaffingListComponent },
   { path: 'addStaffing', component: AddStaffingComponent },
+  { path: 'demographics', component: DemographicsComponent },
+  { path: 'clinical', component: ClinicalComponent },
+  { path: 'education', component: EducationComponent },
+  { path: 'employment', component: EmploymentComponent },
+  { path: 'vr', component: VrComponent },
 ];
 
 @NgModule({
