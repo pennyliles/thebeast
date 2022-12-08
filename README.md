@@ -55,12 +55,14 @@ npm install
 > Upon completion, open another terminal and in one terminal run...
 ```
 cd api
+npm install
 node app.js
 ```
 > To start up the API. Make sure you have you MongoDB server running
 > In the other terminal run...
 ```
 cd my-app
+npm install
 ng serve
 ```
 > And open it in your `localhost` browser
