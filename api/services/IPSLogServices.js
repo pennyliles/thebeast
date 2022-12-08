@@ -1,5 +1,6 @@
 const IPSLogModel = require('../models/IPSLogSchema');
 
+/* Runs mongoose function to get all records from the database */
 async function getAllRecordsFromDB() {
     var records = await IPSLogModel.find(function (err, docs) {
         if (err) {
@@ -16,6 +17,7 @@ async function getAllRecordsFromDB() {
     return records;
 }
 
+/* Runs mongoose function to find a specific record */
 async function getRecordFromDB(id) {
     var record = await IPSLogModel.findOne({ staff_name: id }, function (err, doc) {
         if (err) {
@@ -32,6 +34,7 @@ async function getRecordFromDB(id) {
     return record;
 }
 
+/* Runs mongoose function to add an entire record to the database */
 async function addRecordToDB(body) {
     var record = new IPSLogModel(body);
     var status = await IPSLogModel.findOne(body, function (err, doc) {
@@ -55,6 +58,7 @@ async function addRecordToDB(body) {
     return status;
 }
 
+/* Runs mongoose function that finds a record by an ID and updates it with whatever input */
 async function updateRecordInDB(id, body) {
     var status = await IPSLogModel.findOneAndUpdate({ staff_name: id }, body, function (err, doc) {
         if (err) {
@@ -71,6 +75,7 @@ async function updateRecordInDB(id, body) {
     return status;
 }
 
+/* Runs mongoose function to find a record by an ID and delete it */
 async function deleteRecordFromDB(id) {
     var status = await IPSLogModel.findOne({ staff_name: id });
 
@@ -89,6 +94,7 @@ async function deleteRecordFromDB(id) {
     return status;
 }
 
+/* Runs mongoose function to delete all records in the database */
 async function deleteAllRecordsFromDB() {
     var records = await IPSLogModel.deleteMany({}, function (err, docs) {
         if (err) {

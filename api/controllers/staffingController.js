@@ -1,5 +1,6 @@
 const staffingServices = require('../services/staffingServices');
 
+/* Get all controller to retrieve all records. Result variable checks for success. */
 async function getAllRecords(req, res) {
     try {
         var result = await staffingServices.getAllRecordsFromDB();
@@ -14,6 +15,7 @@ async function getAllRecords(req, res) {
     }
 }
 
+/* Get specific record controller to retrieve a record. Result variable checks for success. */
 async function getRecord(req, res) {
     var id = req.params.id;
     try {
@@ -29,6 +31,7 @@ async function getRecord(req, res) {
     }
 }
 
+/* Add a record controller to add a record. Status variable checks for success. */
 async function addRecord(req, res) {
     var body = req.body;
     try {
@@ -44,6 +47,7 @@ async function addRecord(req, res) {
     }
 }
 
+/* Update a record controller to update a record. Status variable checks for success. */
 async function updateRecord(req, res) {
     var id = req.params.id;
     var body = req.body;
@@ -61,6 +65,7 @@ async function updateRecord(req, res) {
     }
 }
 
+/* Delete a record controller to delete a record. Status variable checks for success. */
 async function deleteRecord(req, res) {
     var id = req.params.id;
     try {
@@ -76,6 +81,7 @@ async function deleteRecord(req, res) {
     }
 }
 
+/* Delete all records controller to delete all records. Result variable checks for success. */
 async function deleteAllRecords(req, res) {
     try {
         var result = await staffingServices.deleteAllRecordsFromDB();
